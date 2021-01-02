@@ -1,10 +1,6 @@
 # Markdown Testsheet
 
----
-
 ## Headers
-
----
 
 ```markdown
 # H1
@@ -40,8 +36,6 @@ Alt-H2
 
 ## Emphasis
 
----
-
 ```markdown
 Emphasis, aka italics, with *asterisks* or _underscores_.
 
@@ -61,8 +55,6 @@ Combined emphasis with **asterisks and _underscores_**.
 Strikethrough uses two tildes. ~~Scratch this.~~
 
 ## Lists
-
----
 
 (In this example, leading and trailing spaces are shown with with dots: ⋅)
 
@@ -103,8 +95,6 @@ Strikethrough uses two tildes. ~~Scratch this.~~
 + Or pluses
 
 ## Links
-
----
 
 There are two ways to create links.
 
@@ -155,8 +145,6 @@ Some text to show that the reference links can follow later.
 
 ## Images
 
----
-
 ```markdown
 Here's our logo (hover to see the title text):
 
@@ -180,8 +168,6 @@ Reference-style:
 [logo]: https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Logo Title Text 2"
 
 ## Code and Syntax Highlighting
-
----
 
 ```markdown
 Inline `code` has `back-ticks around` it.
@@ -223,8 +209,6 @@ But let's throw in a <b>tag</b>.
 
 ## Tables
 
----
-
 ```markdown
 Colons can be used to align columns.
 
@@ -263,8 +247,6 @@ Markdown | Less | Pretty
 
 ## Blockquotes
 
----
-
 ```markdown
 > Blockquotes are very handy in email to emulate reply text.
 > This line is part of the same quote.
@@ -282,8 +264,6 @@ Quote break.
 > This is a very long line that will still be quoted properly when it wraps. Oh boy let's keep writing to make sure this is long enough to actually wrap for everyone. Oh, you can *put* **Markdown** into a blockquote.
 
 ## Inline HTML
-
----
 
 ```markdown
 <dl>
@@ -338,8 +318,6 @@ Underscores
 ---
 
 ## Extra markdown tests
-
----
 
 [/index.html](/index.html)
 
