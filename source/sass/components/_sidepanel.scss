@@ -1,0 +1,19 @@
+@use '../styles/text';
+@use '../styles/colors';
+
+.side-panel {
+    width: 300px;
+
+    box-sizing: border-box;
+
+    padding: 15px;
+
+    background: #333333;
+    border-right: 2px solid #424242;
+}
+
+.main-content {
+    margin: 15px;
+
+    flex: 1;
+}

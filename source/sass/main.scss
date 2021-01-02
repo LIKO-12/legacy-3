@@ -5,10 +5,27 @@
 
 @use 'components/logo';
 @use 'components/navbar';
+@use 'components/sidepanel';
 
 /* Main */
 
 body {
+    width: 100%;
+    min-height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+
+    color: #aeaeae;
+
     background: colors.$background;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.site-container {
+    width: 100%;
+
+    flex: 1;
+
+    display: flex;
 }
