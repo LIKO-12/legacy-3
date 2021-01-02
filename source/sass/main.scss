@@ -7,6 +7,8 @@
 @use 'components/navbar';
 @use 'components/sidepanel';
 
+@use '../../node_modules/highlight.js/scss/darcula.scss';
+
 /* Main */
 
 body {
