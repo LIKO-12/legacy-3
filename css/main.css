@@ -1,0 +1,244 @@
+/* Google Fonts */
+@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap");
+.logo-icon {
+  width: 29px;
+  height: 29px;
+  margin: 0px 5px 0px 30px;
+  filter: drop-shadow(0px 1px 4px rgba(0, 0, 0, 0.4));
+}
+
+.logo-title {
+  width: 110.714px;
+  height: 17.857px;
+  margin: 0px 15px 0px 5px;
+  filter: drop-shadow(0px 1px 4px rgba(0, 0, 0, 0.6));
+}
+
+.navbar {
+  width: 100%;
+  height: 55px;
+  display: flex;
+  align-items: center;
+  top: 0px;
+  position: sticky;
+  z-index: 1;
+  background: #2B2B2B;
+  border-bottom: 1px solid #555555;
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
+}
+.navbar a {
+  height: 100%;
+  display: flex;
+  margin: 0px 0px;
+  padding: 0px 10px;
+  color: #969696;
+  font: 400 18px/24px Segoe UI;
+  align-items: center;
+  text-decoration: none;
+}
+.navbar a:hover, .navbar a:active {
+  color: #bfbfbf;
+  background: rgba(0, 0, 0, 0.25);
+}
+.navbar a.active {
+  color: #cecece;
+  text-decoration: underline;
+}
+.navbar .spacer {
+  flex: 1;
+}
+.navbar .search-box {
+  height: 30px;
+  min-width: 200px;
+  margin: 0px 13px;
+  padding: 0px 15px 0px 32px;
+  box-sizing: border-box;
+  color: #999999;
+  caret-color: #555555;
+  background: #222222;
+  background-image: url("../img/icons/search.svg");
+  background-position: 8px 7px;
+  background-repeat: no-repeat;
+  border: 1px solid #111111;
+  border-radius: 30px;
+  box-shadow: inset 0px 1px 2px rgba(0, 0, 0, 0.3);
+}
+.navbar .search-box::placeholder {
+  color: #555555;
+}
+.navbar .search-box::selection, .navbar .search-box::-moz-selection {
+  color: #222222;
+  background-color: #555555;
+}
+
+.markdown {
+  color: #ececec;
+}
+.markdown a {
+  color: #faa21b;
+  text-decoration: none;
+}
+.markdown a:visited {
+  color: #faa21b;
+}
+.markdown a:hover {
+  text-decoration: underline;
+}
+.markdown hr {
+  border-style: solid;
+  border-color: #aeaeae;
+}
+.markdown blockquote {
+  margin: 0px;
+  padding: 1px 20px;
+  background: rgba(0, 0, 0, 0.25);
+  border-left: 5px solid #faa21b;
+  border-radius: 1px;
+}
+.markdown code {
+  font-family: "JetBrains Mono", monospace;
+}
+.markdown p code {
+  padding: 0px 1px;
+  background: rgba(0, 0, 0, 0.25);
+  border: 1px solid rgba(0, 0, 0, 0.25);
+  border-radius: 2px;
+}
+.markdown pre {
+  display: block;
+  padding: 1.25rem 1.5rem;
+  background-color: rgba(0, 0, 0, 0.4);
+  border-radius: 5px;
+  overflow-x: auto;
+}
+.markdown table {
+  background: none;
+}
+.markdown table th {
+  background-color: #000000;
+  border-bottom: 1px solid #888888;
+}
+.markdown table td, .markdown table th {
+  padding: 15px 30px;
+}
+.markdown table tr:nth-child(2) {
+  background-color: #080808;
+}
+.markdown table tr:not(:nth-child(2)) {
+  background-color: #111111;
+}
+
+.side-panel {
+  width: 300px;
+  box-sizing: border-box;
+  padding: 15px;
+  background: #333333;
+  border-right: 2px solid #424242;
+}
+
+.main-content {
+  max-width: 784px;
+  padding: 0px 35px 20px 35px;
+  flex: 1;
+}
+
+/*
+
+Darcula color scheme from the JetBrains family of IDEs
+
+*/
+.hljs {
+  display: block;
+  overflow-x: auto;
+  padding: 0.5em;
+  background: #2b2b2b;
+  color: #bababa;
+}
+
+.hljs-strong,
+.hljs-emphasis {
+  color: #a8a8a2;
+}
+
+.hljs-bullet,
+.hljs-quote,
+.hljs-link,
+.hljs-number,
+.hljs-regexp,
+.hljs-literal {
+  color: #6896ba;
+}
+
+.hljs-code,
+.hljs-selector-class {
+  color: #a6e22e;
+}
+
+.hljs-emphasis {
+  font-style: italic;
+}
+
+.hljs-keyword,
+.hljs-selector-tag,
+.hljs-section,
+.hljs-attribute,
+.hljs-name,
+.hljs-variable {
+  color: #cb7832;
+}
+
+.hljs-params {
+  color: #b9b9b9;
+}
+
+.hljs-string {
+  color: #6a8759;
+}
+
+.hljs-subst,
+.hljs-type,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-symbol,
+.hljs-selector-id,
+.hljs-selector-attr,
+.hljs-selector-pseudo,
+.hljs-template-tag,
+.hljs-template-variable,
+.hljs-addition {
+  color: #e0c46c;
+}
+
+.hljs-comment,
+.hljs-deletion,
+.hljs-meta {
+  color: #7f7f7f;
+}
+
+/* Main */
+*::-webkit-scrollbar-track {
+  background-color: #444444;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #111111;
+}
+
+body {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  color: #aeaeae;
+  scrollbar-color: #444444 #111111;
+  background: #222222;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.site-container {
+  width: 100%;
+  flex: 1;
+  display: flex;
+}
+
+/*# sourceMappingURL=main.css.map */
