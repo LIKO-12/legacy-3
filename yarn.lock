@@ -443,6 +443,13 @@ fsevents@~2.1.2:
   languageName: node
   linkType: hard
 
+"highlight.js@npm:^10.5.0":
+  version: 10.5.0
+  resolution: "highlight.js@npm:10.5.0"
+  checksum: 00cfa96a725a7fe3f2e4f594303cfb69682414c2e6f1d2e3827bc7c738d8402491fcd5d92db2a3bb210d3d674873298d4a0d05cd78e6fe78a1e8137980a92722
+  languageName: node
+  linkType: hard
+
 "http-signature@npm:~1.2.0":
   version: 1.2.0
   resolution: "http-signature@npm:1.2.0"
@@ -591,6 +598,7 @@ fsevents@~2.1.2:
   version: 0.0.0-use.local
   resolution: "liko-12-website@workspace:."
   dependencies:
+    highlight.js: ^10.5.0
     markdown-it: ^12.0.4
     normalize.css: ^8.0.1
     sass: ^1.32.0
