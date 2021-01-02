@@ -4,6 +4,9 @@ const highlight = require("highlight.js");
 
 const MarkdownIt = require("markdown-it");
 const md = new MarkdownIt({
+    html: true,
+    linkify: true,
+
     highlight: (str, lang) => {
         if (lang && highlight.getLanguage(lang)) {
             try {
