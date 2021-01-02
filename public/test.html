@@ -33,7 +33,7 @@
             Hello side panel!
         </nav>
 
-        <article class="main-content">
+        <article class="main-content markdown">
             <h1>Heading 1</h1>
 <h2>Heading 2</h2>
 <h3>Heading 3</h3>
@@ -45,7 +45,6 @@
 Line 2 same paragraph</p>
 <p><strong>this is bold</strong></p>
 <p><em>this is italic</em></p>
-<p><strong>this is underlined</strong></p>
 <p><s>This is stricked through</s></p>
 <p><a href="https://www.google.com/">This links to google</a></p>
 <p><a href="/index.html">This links to index.html</a></p>
@@ -58,7 +57,46 @@ Line 2 same paragraph</p>
 multiline codeblock
 </code></pre>
 <hr>
-<pre><code class="language-lua"><span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;This is some Lua code!&quot;</span>);
+<pre><code class="language-lua"><span class="hljs-comment">--Ellipses Demo By Rami Sabbagh</span>
+<span class="hljs-comment">--@RamiLego4Game</span>
+
+Controls(<span class="hljs-string">&quot;none&quot;</span>)
+
+<span class="hljs-keyword">local</span> ww = <span class="hljs-number">6</span> <span class="hljs-comment">--Wave width</span>
+<span class="hljs-keyword">local</span> speed = <span class="hljs-number">1</span> <span class="hljs-comment">--Speed</span>
+
+<span class="hljs-keyword">local</span> ww2 = ww*<span class="hljs-number">2</span>
+<span class="hljs-keyword">local</span> ww0 = ww/<span class="hljs-number">2</span>
+
+<span class="hljs-keyword">local</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">ellip</span><span class="hljs-params">(x,y,r)</span></span>
+    <span class="hljs-keyword">if</span> (x+y)%<span class="hljs-number">2</span> == <span class="hljs-number">0</span> <span class="hljs-keyword">then</span> r = r+ww0/<span class="hljs-number">2</span> <span class="hljs-keyword">end</span>
+    <span class="hljs-keyword">local</span> r = r%ww
+ 
+    <span class="hljs-keyword">local</span> rx = <span class="hljs-built_in">math</span>.<span class="hljs-built_in">sin</span>((r/ww0)*<span class="hljs-built_in">math</span>.<span class="hljs-built_in">pi</span>)*<span class="hljs-number">9</span>
+    <span class="hljs-keyword">local</span> ry = <span class="hljs-built_in">math</span>.<span class="hljs-built_in">cos</span>((r/ww0)*<span class="hljs-built_in">math</span>.<span class="hljs-built_in">pi</span>)*<span class="hljs-number">9</span>
+    rx = <span class="hljs-built_in">math</span>.<span class="hljs-built_in">abs</span>(rx)
+    ry = <span class="hljs-built_in">math</span>.<span class="hljs-built_in">abs</span>(ry)
+ 
+ 
+    ellipse(x*<span class="hljs-number">16</span>+<span class="hljs-number">8</span>,y*<span class="hljs-number">16</span>+<span class="hljs-number">8</span>,rx+<span class="hljs-number">1</span>,ry+<span class="hljs-number">1</span>)
+<span class="hljs-keyword">end</span>
+
+<span class="hljs-keyword">local</span> sw, sh = screenSize()
+<span class="hljs-keyword">local</span> cw, ch = sw/<span class="hljs-number">16</span>, sh/<span class="hljs-number">16</span>
+
+<span class="hljs-keyword">local</span> t = ww<span class="hljs-number">-1</span>
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">_update</span><span class="hljs-params">(dt)</span></span>
+    t = t + dt*speed
+    <span class="hljs-keyword">if</span> t &gt; ww2 <span class="hljs-keyword">then</span> t = t -ww2 <span class="hljs-keyword">end</span>
+    clear()
+    <span class="hljs-keyword">for</span> y=<span class="hljs-number">0</span>,ch<span class="hljs-number">-1</span> <span class="hljs-keyword">do</span>
+        <span class="hljs-keyword">for</span> x=<span class="hljs-number">0</span>,cw<span class="hljs-number">-1</span> <span class="hljs-keyword">do</span>
+            color(<span class="hljs-number">7</span>+(x+y)%<span class="hljs-number">8</span>)
+            ellip(x,y,t)
+        <span class="hljs-keyword">end</span>
+    <span class="hljs-keyword">end</span>
+<span class="hljs-keyword">end</span>
 </code></pre>
 
         </article>
