@@ -119,10 +119,11 @@
   background: none;
 }
 .markdown table th {
+  padding: 12px 30px;
   background-color: #000000;
   border-bottom: 1px solid #888888;
 }
-.markdown table td, .markdown table th {
+.markdown table td {
   padding: 15px 30px;
 }
 .markdown table tr {
