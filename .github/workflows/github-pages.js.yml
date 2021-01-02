@@ -13,9 +13,22 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
+      
     - name: Use Node.js 15.x
       uses: actions/setup-node@v1
       with:
         node-version: 15.x
-    - run: npm ci
-    - run: npm run build
+      
+    - name: Download dependencies
+      run: npm install
+      
+    - name: Build the website
+      run: npm run build
+      
+    - name: Deploy to GitHub Pages
+      uses: peaceiris/action-gh-pages@v3.7.3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./public
+        # Keep only the latest commit on a GitHub Pages branch: 
+        force_orphan: true
