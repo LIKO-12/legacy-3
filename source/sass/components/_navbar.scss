@@ -8,6 +8,9 @@
     display: flex;
     align-items: center;
 
+    top: 0px;
+    position: sticky;
+
     z-index: 1;
 
     background: colors.$navbar-background;
