@@ -22,6 +22,7 @@
   "homepage": "https://github.com/LIKO-12/new#readme",
   "private": true,
   "devDependencies": {
+    "markdown-it": "^12.0.4",
     "sass": "^1.32.0"
   },
   "dependencies": {
