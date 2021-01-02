@@ -1,7 +1,5 @@
 .markdown {
-    * {
-        color: #ececec;
-    }
+    color: #ececec;
 
     a {
         color: #faa21b;
@@ -9,6 +7,10 @@
 
         &:visited {
             color: #faa21b;
+        }
+
+        &:hover {
+            text-decoration: underline;
         }
     }
 
@@ -42,5 +44,29 @@
         padding: 1.25rem 1.5rem;
         background-color: rgba(0,0,0, 0.4);
         border-radius: 5px;
+
+        overflow-x: auto;
+    }
+    
+
+    table {
+        background: none;
+
+        th {
+            background-color: #000000;
+            border-bottom: 1px solid #888888;
+        }
+
+        td, th {
+            padding: 15px 30px;
+        }
+
+        tr:nth-child(2) {
+            background-color: #080808;
+        }
+
+        tr:not(:nth-child(2)) {
+            background-color: #111111;
+        }
     }
 }
