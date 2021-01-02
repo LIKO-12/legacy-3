@@ -22,10 +22,30 @@ const md = new MarkdownIt({
 
 const fs = require("fs");
 
-const testMarkdown = fs.readFileSync("source/test.md", "utf-8");
-const testHtml = md.render(testMarkdown);
+const rebuild = () => {
+    const testMarkdown = fs.readFileSync("source/test.md", "utf-8");
+    const testHtml = md.render(testMarkdown);
 
-const templateHtml = fs.readFileSync("public/index.html", "utf-8");
-const testStatic = templateHtml.replace("Hello main content!", testHtml);
+    const templateHtml = fs.readFileSync("public/index.html", "utf-8");
+    const testStatic = templateHtml.replace("Hello main content!", testHtml);
 
-fs.writeFileSync("public/test.html", testStatic);
+    fs.writeFileSync("public/test.html", testStatic);
+
+    console.log("Generated test.html successfully!");
+}
+
+
+if (process.argv.includes("--watch")) {
+    rebuild();
+
+    const watch = require("node-watch");
+
+    const watcher = watch(["./public/index.html", "./source/test.md"], {delay: 0}, (evt, name) => {
+        if (evt === "update") rebuild();
+    });
+
+    process.on("SIGINT", watcher.close);
+} else {
+    rebuild();
+}
+
