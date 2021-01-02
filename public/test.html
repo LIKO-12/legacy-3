@@ -177,20 +177,20 @@ Reference-style:
 <pre><code class="language-markdown">Inline <span class="hljs-code">`code`</span> has <span class="hljs-code">`back-ticks around`</span> it.
 </code></pre>
 <p>Inline <code>code</code> has <code>back-ticks around</code> it.</p>
-<pre><code class="language-markdown">\<span class="hljs-code">`\`</span>\`javascript
+<pre><code class="language-markdown"><span class="hljs-code">```javascript
 var s = &quot;JavaScript syntax highlighting&quot;;
 alert(s);
-\<span class="hljs-code">`\`</span>\`
+```</span>
  
-\<span class="hljs-code">`\`</span>\`python
+<span class="hljs-code">```python
 s = &quot;Python syntax highlighting&quot;
 print s
-\<span class="hljs-code">`\`</span>\`
+```</span>
  
-\<span class="hljs-code">`\`</span>\`
+<span class="hljs-code">```
 No language indicated, so no syntax highlighting. 
-But let&#x27;s throw in a <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">b</span>&gt;</span></span>tag<span class="xml"><span class="hljs-tag">&lt;/<span class="hljs-name">b</span>&gt;</span></span>.
-\<span class="hljs-code">`\`</span>\`
+But let&#x27;s throw in a &lt;b&gt;tag&lt;/b&gt;.
+```</span>
 </code></pre>
 <pre><code class="language-javascript"><span class="hljs-keyword">var</span> s = <span class="hljs-string">&quot;JavaScript syntax highlighting&quot;</span>;
 alert(s);
@@ -323,11 +323,11 @@ Underscores
 <p>Asterisks</p>
 <hr>
 <p>Underscores</p>
-<hr>
 <h2>Extra markdown tests</h2>
 <p><a href="/index.html">/index.html</a></p>
 <p><a href="img/logo-icon.svg">img/logo-icon.svg</a></p>
 <p><img src="img/logo-icon.svg" alt="this should be an image"></p>
+<img src="img/logo-icon.svg" width=128 height=128>
 <pre><code class="language-lua"><span class="hljs-comment">--Ellipses Demo By Rami Sabbagh</span>
 <span class="hljs-comment">--@RamiLego4Game</span>
 

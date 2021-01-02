@@ -175,22 +175,22 @@ Inline `code` has `back-ticks around` it.
 
 Inline `code` has `back-ticks around` it.
 
-```markdown
-\`\`\`javascript
+````markdown
+```javascript
 var s = "JavaScript syntax highlighting";
 alert(s);
-\`\`\`
+```
  
-\`\`\`python
+```python
 s = "Python syntax highlighting"
 print s
-\`\`\`
+```
  
-\`\`\`
+```
 No language indicated, so no syntax highlighting. 
 But let's throw in a <b>tag</b>.
-\`\`\`
 ```
+````
 
 ```javascript
 var s = "JavaScript syntax highlighting";
@@ -315,8 +315,6 @@ ___
 
 Underscores
 
----
-
 ## Extra markdown tests
 
 [/index.html](/index.html)
@@ -324,6 +322,8 @@ Underscores
 [img/logo-icon.svg](img/logo-icon.svg)
 
 ![this should be an image](img/logo-icon.svg)
+
+<img src="img/logo-icon.svg" width=128 height=128>
 
 ```lua
 --Ellipses Demo By Rami Sabbagh
