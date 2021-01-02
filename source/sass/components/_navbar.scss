@@ -70,10 +70,5 @@
         &::placeholder {
             color: colors.$search-box-placeholder;
         }
-
-        &::selection, &::-moz-selection {
-            color: colors.$search-box-background;
-            background-color: colors.$search-box-placeholder;
-        }
     }
 }
