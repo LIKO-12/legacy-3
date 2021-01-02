@@ -1,0 +1,15 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "npm",
+			"script": "watch",
+			"problemMatcher": [
+				"$node-sass"
+			],
+			"group": "build",
+			"label": "npm: watch",
+			"detail": "node_modules/.bin/sass --watch source/sass:public/css"
+		}
+	]
+}
