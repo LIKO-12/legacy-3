@@ -4,7 +4,8 @@
   "description": "LIKO-12's GitHub Website. A static generated website.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "node_modules/.bin/sass source/sass:public/css",
+    "watch": "node_modules/.bin/sass --watch source/sass:public/css"
   },
   "repository": {
     "type": "git",
@@ -19,5 +20,11 @@
     "url": "https://github.com/LIKO-12/new/issues"
   },
   "homepage": "https://github.com/LIKO-12/new#readme",
-  "private": true
+  "private": true,
+  "devDependencies": {
+    "sass": "^1.32.0"
+  },
+  "dependencies": {
+    "normalize.css": "^8.0.1"
+  }
 }
