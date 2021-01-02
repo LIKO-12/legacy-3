@@ -600,6 +600,7 @@ fsevents@~2.1.2:
   dependencies:
     highlight.js: ^10.5.0
     markdown-it: ^12.0.4
+    node-watch: ^0.7.1
     normalize.css: ^8.0.1
     sass: ^1.32.0
   languageName: unknown
@@ -715,6 +716,13 @@ fsevents@~2.1.2:
   bin:
     node-gyp: bin/node-gyp.js
   checksum: fca9ecb1be01f707b76c2aec01f0f2ef4ff45c4e24df378c01a4a2c93b4a8172b47ad59f07af91c54a797a8a77fc72e087e29a97a52c892df507245530c46bfa
+  languageName: node
+  linkType: hard
+
+"node-watch@npm:^0.7.1":
+  version: 0.7.1
+  resolution: "node-watch@npm:0.7.1"
+  checksum: 9b7b2eb0de41bb7881908a5163b28f6c3def9267fed4fbe7d9287bfaba088f1a30a13ad9fe5fc9af33d4a6123eec8bd9dc440887990ef3aead62809202ae4beb
   languageName: node
   linkType: hard
 
