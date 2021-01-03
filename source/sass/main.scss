@@ -28,6 +28,7 @@
 
 body {
     width: 100%;
+    min-width: min-content;
     min-height: 100vh;
 
     display: flex;
