@@ -113,7 +113,7 @@
   padding: 1.25rem 1.5rem;
   background-color: rgba(0, 0, 0, 0.4);
   border-radius: 5px;
-  overflow-x: auto;
+  white-space: pre-wrap;
 }
 .markdown table {
   background: none;
@@ -135,6 +135,7 @@
 
 .side-panel {
   width: 300px;
+  flex-shrink: 0;
   box-sizing: border-box;
   padding: 15px;
   background: #333333;
@@ -236,6 +237,7 @@ Darcula color scheme from the JetBrains family of IDEs
 
 body {
   width: 100%;
+  min-width: min-content;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
