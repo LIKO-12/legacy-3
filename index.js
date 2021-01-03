@@ -1,5 +1,7 @@
 //Prototype script
 
+const fs = require("fs");
+
 if (!fs.existsSync("build")) fs.mkdirSync("build");
 if (!fs.existsSync("pages")) fs.mkdirSync("pages");
 if (!fs.existsSync("public")) fs.mkdirSync("public");
@@ -13,7 +15,6 @@ child_process.execSync(`"node_modules/.bin/sass" source/sass:public/css`);
 
 require("colors");
 
-const fs = require("fs");
 const path = require("path");
 
 const highlight = require("highlight.js");
