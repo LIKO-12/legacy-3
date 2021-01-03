@@ -28,8 +28,16 @@ body {
 }
 
 .content-container {
+    min-width: 0px;
     max-width: 784px;
     flex: 1;
 
     padding: 0px 35px 20px 35px;
+}
+
+@media screen and (max-width: 720px) {
+    .content-container {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
 }

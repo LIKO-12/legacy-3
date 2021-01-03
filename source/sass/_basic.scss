@@ -4,6 +4,10 @@
 @use 'scrollbar';
 @use 'styles/colors';
 
+*:focus {
+    outline: none;
+}
+
 body {
     color: #ececec;
     background: colors.$background;
@@ -65,11 +69,13 @@ pre {
     background-color: rgba(0,0,0, 0.4);
     border-radius: 5px;
     white-space: pre-wrap;
+    word-break: break-all;
 }
 
 
 table {
     background: none;
+    word-break: break-word;
 
     th {
         padding: 12px 30px;
@@ -87,5 +93,22 @@ table {
 
     tr:nth-child(2) {
         background-color: #080808;
+    }
+}
+
+@media screen and (max-width: 720px) {
+    pre {
+        padding: 0.625rem 0.75rem;
+    }
+
+    ol, ul {
+        padding-left: 30px;
+    }
+
+    table {
+        th, td {
+            padding-left: 15px;
+            padding-right: 15px;
+        }
     }
 }
