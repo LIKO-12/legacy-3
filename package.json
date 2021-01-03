@@ -4,7 +4,7 @@
   "description": "LIKO-12's GitHub Website. A static generated website.",
   "main": "index.js",
   "scripts": {
-    "build": "node_modules/.bin/sass source/sass:public/css",
+    "build": "node .",
     "watch": "node_modules/.bin/sass --watch source/sass:public/css"
   },
   "repository": {
@@ -22,8 +22,10 @@
   "homepage": "https://github.com/LIKO-12/new#readme",
   "private": true,
   "devDependencies": {
+    "colors": "^1.4.0",
     "highlight.js": "^10.5.0",
     "markdown-it": "^12.0.4",
+    "mustache": "^4.1.0",
     "node-watch": "^0.7.1",
     "sass": "^1.32.0"
   },

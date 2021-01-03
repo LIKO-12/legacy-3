@@ -113,3 +113,6 @@ dist
 
 # Compiled CSS files
 public/css/*
+
+# Build directory
+build

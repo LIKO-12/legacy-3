@@ -191,6 +191,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"colors@npm:^1.4.0":
+  version: 1.4.0
+  resolution: "colors@npm:1.4.0"
+  checksum: a0f266ac041a9774d92cc9624a984707678d2eeec125d54e8d8231075ce36c24c5352fb5d0f90c6ee420d0f63e354417cec716386ad341309334aad18e32b933
+  languageName: node
+  linkType: hard
+
 "combined-stream@npm:^1.0.6, combined-stream@npm:~1.0.6":
   version: 1.0.8
   resolution: "combined-stream@npm:1.0.8"
@@ -598,8 +605,10 @@ fsevents@~2.1.2:
   version: 0.0.0-use.local
   resolution: "liko-12-website@workspace:."
   dependencies:
+    colors: ^1.4.0
     highlight.js: ^10.5.0
     markdown-it: ^12.0.4
+    mustache: ^4.1.0
     node-watch: ^0.7.1
     normalize.css: ^8.0.1
     sass: ^1.32.0
@@ -696,6 +705,15 @@ fsevents@~2.1.2:
   bin:
     mkdirp: bin/cmd.js
   checksum: 1aa3a6a2d7514f094a91329ec09994f5d32d2955a4985ecbb3d86f2aaeafc4aa11521f98d606144c1d49cd9835004d9a73342709b8c692c92e59eacf37412468
+  languageName: node
+  linkType: hard
+
+"mustache@npm:^4.1.0":
+  version: 4.1.0
+  resolution: "mustache@npm:4.1.0"
+  bin:
+    mustache: bin/mustache
+  checksum: 28485b250d88eba57d607cdf63626654a89ab43b23a959fd0773b1a815ea45e0afa0f1cab4abd6cc26b04ff6f507186ecfbdf30c0ad84606917e4607a0368132
   languageName: node
   linkType: hard
 
