@@ -1,4 +1,5 @@
 /* Google Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital@0;1&display=swap");
 *::selection, *::-moz-selection {
   color: #777777;
@@ -24,7 +25,7 @@ html {
 body {
   color: #ececec;
   background: #222222;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Segoe UI", "Open Sans", Tahoma, Geneva, Verdana, sans-serif;
 }
 
 h1 {
@@ -147,7 +148,7 @@ table tr:nth-child(2) {
   margin: 0;
   padding: 0px 10px;
   color: #969696;
-  font: 400 18px/24px Segoe UI;
+  font: 400 18px/24px "Segoe UI", "Open Sans", Tahoma, Geneva, Verdana, sans-serif;
   align-items: center;
   text-decoration: none;
 }
