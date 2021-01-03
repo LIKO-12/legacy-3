@@ -34,10 +34,8 @@ const rebuild = () => {
     console.log("Generated test.html successfully!");
 }
 
-
+rebuild();
 if (process.argv.includes("--watch")) {
-    rebuild();
-
     const watch = require("node-watch");
 
     const watcher = watch(["./public/index.html", "./source/test.md"], {delay: 0}, (evt, name) => {
@@ -45,7 +43,5 @@ if (process.argv.includes("--watch")) {
     });
 
     process.on("SIGINT", watcher.close);
-} else {
-    rebuild();
 }
 
