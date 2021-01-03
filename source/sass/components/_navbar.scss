@@ -30,7 +30,11 @@
         align-items: center;
         text-decoration: none;
 
-        &:hover, &:active {
+        &:visited {
+            color: colors.$navbar-button;
+        }
+
+        &:hover {
             color: colors.$navbar-button-hover;
             background: rgba(0, 0, 0, 0.25);
         }
