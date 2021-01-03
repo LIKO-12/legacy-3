@@ -2,6 +2,7 @@
 
 @use 'fonts';
 @use 'scrollbar';
+@use 'styles/text';
 @use 'styles/colors';
 
 *:focus {
@@ -12,7 +13,7 @@ body {
     color: #ececec;
     background: colors.$background;
 
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: text.$font-family;
 }
 
 h1 {
