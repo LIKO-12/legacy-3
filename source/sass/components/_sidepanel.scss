@@ -4,6 +4,7 @@
 .side-panel {
     width: 300px;
 
+    flex-shrink: 0;
     box-sizing: border-box;
 
     padding: 15px;
