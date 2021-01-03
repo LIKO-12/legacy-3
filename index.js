@@ -1,5 +1,11 @@
 //Prototype script
 
+if (!fs.existsSync("build")) fs.mkdirSync("build");
+if (!fs.existsSync("pages")) fs.mkdirSync("pages");
+if (!fs.existsSync("public")) fs.mkdirSync("public");
+if (!fs.existsSync("templates")) fs.mkdirSync("templates");
+if (!fs.existsSync("templates/_partials")) fs.mkdirSync("templates/_partials");
+
 const child_process = require("child_process");
 child_process.execSync(`"node_modules/.bin/sass" source/sass:public/css`);
 
@@ -136,8 +142,6 @@ function render(source, destination) {
 }
 
 // ------------------------------ Building ------------------------------ //
-
-if (!fs.existsSync("build")) fs.mkdirSync("build");
 
 console.log("Building...".magenta);
 
