@@ -13,6 +13,10 @@ Welcome to the website of LIKO-12!
 
 Most programs support [[Ctrl+C]] for copying.
 
+## Special emojis:
+
+There's a special `:liko-12:` :liko-12: emoji!
+
 ## macOS keyboard symbols
 
 - Command [[:cmd:]] `:cmd:`
