@@ -73,6 +73,14 @@ pre {
     word-break: break-all;
 }
 
+kbd {
+    padding: 0 4px;
+
+    color: #222222;
+    border-radius: 4px;
+    background-color: #cecece;
+    box-shadow: 0px 2px 0 #888888;
+}
 
 table {
     background: none;
