@@ -15,7 +15,7 @@ const twemoji = require("twemoji");
  * Renders the static documents.
  */
 const Renderer = class Renderer {
-    static md = null; // initialized later in this file.
+    static md = null; // (MarkdownIt instance) initialized later in this file.
 
     /**
      * Renderes a reference document into an HTML file.
@@ -32,6 +32,8 @@ const Renderer = class Renderer {
 
         const renderedDocument = Mustache.render(Templates.loaded.reference, extendedView, Templates.loadedParitals);
         fs.writeFileSync(path.join("build", destination), renderedDocument, "utf-8");
+
+        console.log(("- Rendered " + destination).blue);
     }
 
     /**
@@ -39,12 +41,53 @@ const Renderer = class Renderer {
      * @param {string} markdown The document's content in Markdown.
      * @param {object} view The view properties of the document (for the usage by the template).
      * @param {string} destination A file path relative to the build directory,
-     * pointing to the desination HTML deocument.
+     * pointing to the desination HTML document.
      */
     static renderMarkdownReference(markdown, view, destination) {
         const rootPath = path.posix.relative(path.posix.dirname(destination), "");
-        const content = md.render(markdown, {rootPath: rootPath});
+        const content = md.render(markdown, { rootPath: rootPath });
         this.renderReference(content, view, destination);
+    }
+
+    /**
+     * Renderes a reference document written in markdown into an HTML file.
+     * @param {string} filePath The file path to the markdown document.
+     * @param {object} view The view properties of the document (for the usage by the template).
+     * @param {string} destination A file path relative to the build directory,
+     * pointing to the destination HTML document.
+     */
+    static renderMarkdownFile(filePath, view, destination) {
+        const markdown = fs.readFileSync(filePath, "utf-8");
+        this.renderMarkdownReference(markdown, view, destination);
+    }
+
+    /**
+     * Renderes a directory of documents into HTML documents in the build directory.
+     * @param {string} source The file path to the source directory.
+     * @param {string} destination A file path relative to the build directory.
+     * @param {boolean} recursive Whether to render the directory recursively, or only the top-level of it.
+     */
+    static renderDirectory(source, destination, recursive = false) {
+        if (fs.statSync(source, "mode").isDirectory()) {
+            if (!fs.existsSync(source)) fs.mkdirSync(destination);
+            for (let fileName of fs.readdirSync(source, "utf-8")) {
+                const filePath = path.join(source, fileName);
+                const subDestination = path.join(destination, fileName);
+
+                if (!fs.statSync(filePath, "mode").isDirectory() || recursive) {
+                    this.renderDirectory(filePath, subDestination, recursive);
+                }
+            }
+        } else {
+            const view = {
+                title: "TITLE",
+                description: "DESCRIPTION",
+                navbar: null, //TODO: navbar processing
+                sidepanel: null //TODO: sidepanel processing
+            }
+
+            this.renderMarkdownFile(source, view, destination);
+        }
     }
 }
 
