@@ -9,7 +9,7 @@
 			],
 			"group": "build",
 			"label": "npm: watch",
-			"detail": "node_modules/.bin/sass --watch source/sass:public/assets/css"
+			"detail": "node_modules/.bin/sass --watch sass:build/assets/css"
 		}
 	]
 }
