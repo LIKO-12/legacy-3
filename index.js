@@ -9,7 +9,7 @@ if (!fs.existsSync("templates")) fs.mkdirSync("templates");
 if (!fs.existsSync("templates/_partials")) fs.mkdirSync("templates/_partials");
 
 const child_process = require("child_process");
-child_process.execSync(`"node_modules/.bin/sass" source/sass:public/css`);
+child_process.execSync(`"node_modules/.bin/sass" source/sass:public/assets/css`);
 
 // ------------------------------ Libraries ------------------------------ //
 
@@ -21,7 +21,6 @@ const highlight = require("highlight.js");
 
 const Mustache = require("mustache");
 const MarkdownIt = require("markdown-it");
-const { profileEnd } = require("console");
 
 // ------------------------------ Markdown ------------------------------ //
 
