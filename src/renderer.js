@@ -148,10 +148,12 @@ md.use(kbd).use(mdReplaceLink).use(emoji, {defs: {
     "cmd": "⌘",
     "shift": "⇧",
     "alt": "⌥",
-    "ctrl": "⌃"
+    "ctrl": "⌃",
+    "liko-12": ""
 }});
 
-md.renderer.rules.emoji = (token, idx) => {
+md.renderer.rules.emoji = (token, idx, _, env) => {
+    if (token[idx].markup == "liko-12") return `<span class="emoji_liko12"></span>`;
     return twemoji.parse(token[idx].content);
 }
 

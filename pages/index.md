@@ -1,4 +1,4 @@
-# LIKO-12
+# :liko-12: LIKO-12
 
 Welcome to the website of LIKO-12!
 
