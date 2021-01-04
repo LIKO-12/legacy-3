@@ -26,6 +26,7 @@ body {
   color: #ececec;
   background: #222222;
   font-family: "Segoe UI", "Open Sans", Tahoma, Geneva, Verdana, sans-serif;
+  text-rendering: optimizeLegibility;
 }
 
 h1 {
