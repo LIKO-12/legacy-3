@@ -109,6 +109,12 @@ table {
     tr:nth-child(2) {
         background-color: #080808;
     }
+
+    code {
+        padding: 0;
+        background: none;
+        border: none;
+    }
 }
 
 .emoji {
