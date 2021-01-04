@@ -1,0 +1,27 @@
+<nav class="navbar">
+    <!-- LIKO-12's Logo -->
+    <dev class="navbar-logo">
+        <img src="{{rootPath}}assets/img/logo-icon.svg" class="logo-icon">
+        <img src="{{rootPath}}assets/img/logo-title.svg" class="logo-title">
+
+        <dev class="mobile-spacer"></dev>
+        <button class="mobile-toggle"></button>
+
+        <script>
+            const navbarElement = document.querySelector(".navbar");
+            const toggleButton = document.querySelector(".navbar .mobile-toggle");
+            toggleButton.onclick = () => navbarElement.classList.toggle("active");
+        </script>
+    </dev>
+
+    <!-- Naviagtion links -->
+    {{#navbar.links}}
+    <a href="{{.href}}"{{#.active}} class="active"{{/.active}}>{{.name}}</a>
+    {{/navbar.links}}
+
+    <!-- Spacer -->
+    <dev class="spacer"></dev>
+
+    <!-- Search box -->
+    <input type="text" class="search-box" placeholder="Search documentation" autocomplete>
+</nav>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="{{description}}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>{{title}}</title>
+
+    <link rel="shortcut icon" href="{{rootPath}}favicon.ico">
+    <link rel="stylesheet" href="{{rootPath}}assets/css/normalize.css">
+    <link rel="stylesheet" href="{{rootPath}}assets/css/main.css">
+</head>
+
+<body>
+    {{> navbar}}
+
+    <div class="main-container">
+        {{> sidepanel}}
+
+        <article class="content-container">
+            {{{content}}}
+        </article>
+    </div>
+</body>
+
+</html>
