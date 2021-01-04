@@ -319,11 +319,11 @@ Underscores
 
 [/index.html](/index.html)
 
-[img/logo-icon.svg](img/logo-icon.svg)
+[img/logo-icon.svg](assets/img/logo-icon.svg)
 
-![this should be an image](img/logo-icon.svg)
+![this should be an image](assets/img/logo-icon.svg)
 
-<img src="img/logo-icon.svg" width=128 height=128>
+<img src="assets/img/logo-icon.svg" width=128 height=128>
 
 ```lua
 --Ellipses Demo By Rami Sabbagh
