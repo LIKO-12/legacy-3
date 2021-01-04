@@ -12,7 +12,7 @@ module.exports = class Static {
      */
     static copyDirectory(source, destination="", recursive=false) {
         if (fs.statSync(source, "mode").isDirectory()) {
-            if (!fs.existsSync(destination)) fs.mkdirSync(destination);
+            if (!fs.existsSync(destination)) fs.mkdirSync(destination, {recursive: true});
             for (let fileName of fs.readdirSync(source, "utf-8")) {
                 const filePath = path.join(source, fileName);
                 const subDestination = path.join(destination, fileName);
