@@ -1,0 +1,3 @@
+☐ It's possible to match the line height with the emoji height using `.emoji { height: 1.2em; }`.
+☐ Style the `<kbd>` elements properly.
+☐ Create a 404 page.
