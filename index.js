@@ -7,6 +7,9 @@ const Styles = require("./src/styles");
 
 Styles.attemptToCompileStandardDirectory();
 Static.copyStandardDirectory();
+Templates.loadStandardTemplates();
+Templates.loadStandardPartials();
+Renderer.renderStandardDirectory();
 
 // ------------------------------ Watching directories ------------------------------ //
 
