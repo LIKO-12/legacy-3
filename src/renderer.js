@@ -144,13 +144,15 @@ const md = new MarkdownIt({
     }
 });
 
-md.use(kbd).use(mdReplaceLink).use(emoji, {defs: {
+const emojis_definition = Object.assign({
     "cmd": "⌘",
     "shift": "⇧",
     "alt": "⌥",
     "ctrl": "⌃",
     "liko-12": ""
-}});
+}, require("markdown-it-emoji/lib/data/full.json"));
+
+md.use(kbd).use(mdReplaceLink).use(emoji, {defs: emojis_definition});
 
 md.renderer.rules.emoji = (token, idx, _, env) => {
     if (token[idx].markup == "liko-12") return `<span class="emoji_liko12"></span>`;
