@@ -125,6 +125,16 @@ table code {
   top: 4px;
 }
 
+.emoji_liko12 {
+  width: 1.5em;
+  height: 1.5em;
+  display: inline-block;
+  position: relative;
+  top: 0.35em;
+  background-image: url("../img/logo-icon.svg");
+  background-size: cover;
+}
+
 @media screen and (max-width: 720px) {
   pre {
     padding: 0.625rem 0.75rem;
