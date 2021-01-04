@@ -25,9 +25,10 @@ const Renderer = class Renderer {
      * pointing to the destination HTML document.
      */
     static renderReference(content, view, destination) {
+        const dirName = path.relative(path.dirname(destination), "").replace(/\\/g, "/");
         const extendedView = Object.assign({
             content: content,
-            rootPath: path.posix.relative(path.posix.dirname(destination), "")
+            rootPath: (dirName == "") ? "" : (dirName + "/")
         }, view);
 
         const renderedDocument = Mustache.render(Templates.loaded.reference, extendedView, Templates.loadedParitals);
@@ -44,8 +45,8 @@ const Renderer = class Renderer {
      * pointing to the desination HTML document.
      */
     static renderMarkdownReference(markdown, view, destination) {
-        const rootPath = path.posix.relative(path.posix.dirname(destination), "");
-        const content = md.render(markdown, { rootPath: rootPath });
+        const documentPath = path.dirname(destination).replace(/\\/g, "/");
+        const content = md.render(markdown, { documentPath: documentPath });
         this.renderReference(content, view, destination);
     }
 
@@ -69,7 +70,7 @@ const Renderer = class Renderer {
      */
     static renderDirectory(source, destination, recursive = false) {
         if (fs.statSync(source, "mode").isDirectory()) {
-            if (!fs.existsSync(source)) fs.mkdirSync(destination, {recursive: true});
+            if (!fs.existsSync("build/" + destination)) fs.mkdirSync("build/" + destination, {recursive: true});
             for (let fileName of fs.readdirSync(source, "utf-8")) {
                 const filePath = path.join(source, fileName);
                 const subDestination = path.join(destination, fileName);
@@ -86,8 +87,15 @@ const Renderer = class Renderer {
                 sidepanel: null //TODO: sidepanel processing
             }
 
-            this.renderMarkdownFile(source, view, destination);
+            this.renderMarkdownFile(source, view, destination.replace(/.md$/, ".html"));
         }
+    }
+
+    /**
+     * Renders the standard documents directory (./pages) into the build directory.
+     */
+    static renderStandardDirectory() {
+        this.renderDirectory("pages", "", true);
     }
 }
 
@@ -101,8 +109,8 @@ const md = new MarkdownIt({
      * @param {object} env The markdown render environment.
      */
     replaceLink: (link, env) => {
-        link.replace(/.md$/, ".html"); // Convert .md links into .html
-        if (path.posix.isAbsolute(link)) link = env.rootPath + link; //Convert absulote paths to relative ones.
+        link = link.replace(/.md$/, ".html"); // Convert .md links into .html
+        if (path.posix.isAbsolute(link)) link = path.posix.relative(env.documentPath, "." + link); //Convert absolute paths to relative ones.   
         return link;
     },
 
