@@ -4,12 +4,9 @@
 		{
 			"type": "npm",
 			"script": "watch",
-			"problemMatcher": [
-				"$node-sass"
-			],
 			"group": "build",
 			"label": "npm: watch",
-			"detail": "node_modules/.bin/sass --watch sass:build/assets/css"
+			"detail": "node . --watch"
 		}
 	]
 }

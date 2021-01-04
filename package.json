@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build": "node .",
-    "watch": "node_modules/.bin/sass --watch sass:build/assets/css"
+    "watch": "node . --watch"
   },
   "repository": {
     "type": "git",
