@@ -11,4 +11,11 @@ Welcome to the website of LIKO-12!
 
 ## Miscellanuous
 
-Most programs support [[ctrl]] + [[c]] for copying.
+Most programs support [[Ctrl+C]] for copying.
+
+## macOS keyboard symbols
+
+- Command [[:cmd:]] `:cmd:`
+- Alt [[:alt:]] `:alt:`
+- Shift [[:shift:]] `:shift:`
+- Ctrl [[:ctrl:]] `:ctrl:`

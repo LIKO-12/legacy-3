@@ -144,7 +144,13 @@ const md = new MarkdownIt({
     }
 });
 
-md.use(kbd).use(mdReplaceLink).use(emoji);
+md.use(kbd).use(mdReplaceLink).use(emoji, {defs: {
+    "cmd": "⌘",
+    "shift": "⇧",
+    "alt": "⌥",
+    "ctrl": "⌃"
+}});
+
 md.renderer.rules.emoji = (token, idx) => {
     return twemoji.parse(token[idx].content);
 }
