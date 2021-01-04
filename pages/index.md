@@ -2,7 +2,7 @@
 
 Welcome to the website of LIKO-12!
 
-> Please note that the website is still work under progress ⚠
+> Please note that the website is still work under progress :warning:
 
 ## Website development documents
 
