@@ -6,8 +6,8 @@ module.exports = class Static {
 
     /**
      * Copies a whole directory from source to destination in the build directory.
-     * @param {string} source The filepath of the source directory.
-     * @param {string} destination A filepath relative to the build directory.
+     * @param {string} source The file path of the source directory.
+     * @param {string} destination The file path of the build directory.
      * @param {boolean} recursive Whether to copy the directory recursively or the top-level only.
      */
     static copyDirectory(source, destination="", recursive=false) {
@@ -18,7 +18,7 @@ module.exports = class Static {
                 const subDestination = path.join(destination, fileName);
 
                 if (!fs.statSync(filePath, "mode").isDirectory() || recursive) {
-                    this.copyDirectory(source, destination, recursive);
+                    this.copyDirectory(filePath, subDestination, recursive);
                 }
             }
         } else {
@@ -31,6 +31,6 @@ module.exports = class Static {
      * Copies the standard static files directory (./static) into the build directory.
      */
     static copyStandardDirectory() {
-        this.copyDirectory("static", "", true);
+        this.copyDirectory("static", "build", true);
     }
 }

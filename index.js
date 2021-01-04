@@ -6,6 +6,7 @@ const Static = require("./src/static");
 const Styles = require("./src/styles");
 
 Styles.attemptToCompileStandardDirectory();
+Static.copyStandardDirectory();
 
 // ------------------------------ Watching directories ------------------------------ //
 
