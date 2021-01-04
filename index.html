@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="DESCRIPTION">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>TITLE</title>
+
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="assets/css/normalize.css">
+    <link rel="stylesheet" href="assets/css/main.css">
+</head>
+
+<body>
+    <nav class="navbar">
+        <!-- LIKO-12's Logo -->
+        <dev class="navbar-logo">
+            <img src="assets/img/logo-icon.svg" class="logo-icon">
+            <img src="assets/img/logo-title.svg" class="logo-title">
+
+            <dev class="mobile-spacer"></dev>
+            <button class="mobile-toggle"></button>
+
+            <script>
+                const navbarElement = document.querySelector(".navbar");
+                const toggleButton = document.querySelector(".navbar .mobile-toggle");
+                toggleButton.onclick = () => navbarElement.classList.toggle("active");
+            </script>
+        </dev>
+
+        <!-- Naviagtion links -->
+
+        <!-- Spacer -->
+        <dev class="spacer"></dev>
+
+        <!-- Search box -->
+        <input type="text" class="search-box" placeholder="Search documentation" autocomplete>
+    </nav>
+    <div class="main-container">
+        <nav class="side-panel">
+            Hello side panel!
+        </nav>
+        <article class="content-container">
+            <h1>LIKO-12</h1>
+<p>Welcome to the website of LIKO-12!</p>
+<blockquote>
+<p>Please note that the website is still work under progress ⚠</p>
+</blockquote>
+<h2>Website development documents</h2>
+<ul>
+<li><a href="markdown-cheatsheet.html">Markdown Cheatsheet</a></li>
+<li><a href="subpath/index.html">Sub-document</a></li>
+</ul>
+
+        </article>
+    </div>
+</body>
+
+</html>
