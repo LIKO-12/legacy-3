@@ -112,7 +112,7 @@ dist
 .pnp.*
 
 # Compiled CSS files
-public/css/*
+public/assets/css/*
 
 # Build directory
 build
