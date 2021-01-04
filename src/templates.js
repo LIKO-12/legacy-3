@@ -94,4 +94,33 @@ module.exports = class Templates {
         if (!fs.existsSync("templates/_partials")) return;
         this.loadPartialsDirectory("templates/_partials");
     }
+
+    /**
+     * Watch for the changes in the (./templates) directory and automatically rebuild.
+     * @returns {Watcher} The created watcher.
+     */
+    static watchStandardDirectory() {
+        const watch = require("node-watch");
+        const partialsDirectory = path.join("templates", "_partials");
+        return watch(["templates", "templates/_partials"], { delay: 0 }, (event, filePath) => {
+            const fileName = path.basename(filePath, path.extname(filePath));
+            if (event == "update") {
+                if (filePath.startsWith(partialsDirectory)) {
+                    this.loadPartial(filePath, fileName);
+                } else {
+                    this.loadTemplate(filePath, fileName);
+                }
+            } else if (event == "remove") {
+                if (filePath.startsWith(partialsDirectory)) {
+                    delete this.loadedPartials[fileName];
+                    console.log(("- Unloaded template partial: " + fileName).red);
+                } else {
+                    delete this.loaded[fileName];
+                    console.log(("- Unloaded template: " + fileName).red);
+                }
+            }
+
+            require("./renderer").renderStandardDirectory();
+        });
+    }
 };

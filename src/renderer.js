@@ -97,6 +97,23 @@ const Renderer = class Renderer {
     static renderStandardDirectory() {
         this.renderDirectory("pages", "", true);
     }
+
+    /**
+     * Watch for the changes in the (./pages) directory and automatically rebuild.
+     * @returns {Watcher} The created watcher.
+     */
+    static watchStandardDirectory() {
+        const watch = require("node-watch");
+        return watch("pages", { delay: 0, recursive: true }, (event, filePath) => {
+            const destination = path.relative("pages", filePath.replace(/.md$/, ".html"));
+            if (event == "update") {
+                this.renderDirectory(filePath, destination, true);
+            } else if (event == "remove") {
+                fs.rmSync(path.join("build", destination));
+                console.log(("- Removed build/" + destination).red);
+            }
+        });
+    }
 }
 
 const md = new MarkdownIt({

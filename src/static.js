@@ -33,4 +33,21 @@ module.exports = class Static {
     static copyStandardDirectory() {
         this.copyDirectory("static", "build", true);
     }
+
+    /**
+     * Watch for the changes in the (./static) directory and automatically copy the files.
+     * @returns {Watcher} The created watcher.
+     */
+    static watchStandardDirectory() {
+        const watch = require("node-watch");
+        return watch("static", { delay: 0, recursive: true }, (event, filePath) => {
+            const destination = path.join("build", path.relative("static", filePath));
+            if (event == "update") {
+                this.copyDirectory(filePath, destination, true);
+            } else if (event == "remove") {
+                fs.rmSync(destination, { recursive: true });
+                console.log(("- Removed " + destination).red);
+            }
+        });
+    }
 }

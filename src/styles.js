@@ -50,4 +50,13 @@ module.exports = class Styles {
     static attemptToCompileStandardDirectory() {
         this.attemptToCompileDirectory("sass", "build/assets/css");
     }
+
+    /**
+     * Watch for the changes in the (./sass) directory and automatically rebuild.
+     * @returns {Watcher} The created watcher.
+     */
+    static watchStandardDirectory() {
+        const watch = require("node-watch");
+        return watch("sass", { delay: 0, recursive: true }, () => this.attemptToCompileStandardDirectory());
+    }
 }
