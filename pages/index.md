@@ -19,7 +19,9 @@ There's a special `:liko-12:` :liko-12: emoji!
 
 ## macOS keyboard symbols
 
-- Command [[:cmd:]] `:cmd:`
-- Alt [[:alt:]] `:alt:`
-- Shift [[:shift:]] `:shift:`
-- Ctrl [[:ctrl:]] `:ctrl:`
+| Name    | Symbol  | Shortcut    | Emoji ID  |
+|:------- |:-------:|:-----------:|:---------:|
+| Command | :cmd:   | [[:cmd:]]   | `:cmd:`   |
+| Alt     | :alt:   | [[:alt:]]   | `:alt:`   |
+| Shift   | :shift: | [[:shift:]] | `:shift:` |
+| Ctrl    | :ctrl:  | [[:ctrl:]]  | `:ctrl:`  |
