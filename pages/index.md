@@ -8,3 +8,7 @@ Welcome to the website of LIKO-12!
 
 - [Markdown Cheatsheet](markdown-cheatsheet.md)
 - [Sub-document](subpath/index.md)
+
+## Miscellanuous
+
+Most programs support [[ctrl]] + [[c]] for copying.
