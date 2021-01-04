@@ -101,6 +101,12 @@ table tr:nth-child(2) {
   background-color: #080808;
 }
 
+.emoji {
+  height: 1.2em;
+  position: relative;
+  top: 4px;
+}
+
 @media screen and (max-width: 720px) {
   pre {
     padding: 0.625rem 0.75rem;
