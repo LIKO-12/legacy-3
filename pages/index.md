@@ -6,4 +6,5 @@ Welcome to the website of LIKO-12!
 
 ## Website development documents
 
-- [Markdown Cheatsheet](markdown-cheatsheet.html)
+- [Markdown Cheatsheet](markdown-cheatsheet.md)
+- [Sub-document](subpath/index.md)
