@@ -1,6 +1,6 @@
 ---
 title: Guide
-window_title: LIKO-12 • Guide
+window_title: Guide
 description: LIKO-12's Official Guide
 keywords:
     - Guide

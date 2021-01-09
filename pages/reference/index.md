@@ -1,6 +1,6 @@
 ---
 title: Reference
-window_title: LIKO-12 • Reference
+window_title: Reference
 description: LIKO-12's Official Reference
 keywords:
     - Reference
