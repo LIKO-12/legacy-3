@@ -300,6 +300,11 @@ table code {
   background: #333333;
   border-right: 2px solid #424242;
 }
+@media screen and (max-width: 1024px) {
+  .side-panel {
+    display: none;
+  }
+}
 
 /*
 
@@ -388,6 +393,12 @@ body {
   flex: 1;
   display: flex;
 }
+@media screen and (max-width: 1024px) {
+  .main-container {
+    align-items: center;
+    justify-content: center;
+  }
+}
 
 .content-container {
   min-width: 0px;
@@ -395,7 +406,6 @@ body {
   flex: 1;
   padding: 0px 35px 20px 35px;
 }
-
 @media screen and (max-width: 720px) {
   .content-container {
     padding-left: 15px;
