@@ -1,9 +1,10 @@
 <nav class="navbar">
     <!-- LIKO-12's Logo -->
     <dev class="navbar-logo">
-        <img src="{{rootPath}}assets/img/logo-icon.svg" class="logo-icon">
-        <img src="{{rootPath}}assets/img/logo-title.svg" class="logo-title">
-
+        <a href="{{rootPath}}">
+            <img src="{{rootPath}}assets/img/logo-icon.svg" class="logo-icon">
+            <img src="{{rootPath}}assets/img/logo-title.svg" class="logo-title">
+        </a>
         <dev class="mobile-spacer"></dev>
         <button class="mobile-toggle"></button>
 
@@ -16,7 +17,8 @@
 
     <!-- Naviagtion links -->
     {{#navbar.links}}
-    <a href="{{.href}}"{{#.active}} class="active"{{/.active}}>{{.name}}</a>
+    {{^disabled}}<a href="{{href}}" class="link{{#active}} active{{/active}}">{{name}}</a>{{/disabled}}
+    {{#disabled}}<button class="link" disabled>{{name}}</button>{{/disabled}}
     {{/navbar.links}}
 
     <!-- Spacer -->

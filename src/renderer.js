@@ -12,11 +12,44 @@ const kbd = require("markdown-it-kbd");
 const emoji = require("markdown-it-emoji");
 const twemoji = require("twemoji");
 
+const navbarConfiguration = require("../pages/_navbar.json");
+
 /**
  * Renders the static documents.
  */
 const Renderer = class Renderer {
     static md = null; // (MarkdownIt instance) initialized later in this file.
+
+    /**
+     * Generates the navbar view data based on the document path.
+     * @param {string} documentPath A file path relative to the build directory.
+     */
+    static generateNavbar(documentPath) {
+        documentPath = documentPath.replace(/\\/g, "/");
+        const links = [];
+        for (let link of navbarConfiguration) {
+            const entry = { name: link[0], absolute: link[1] };
+            if (link[1]) entry.href = path.posix.relative(path.posix.dirname(documentPath), link[1]);
+            else entry.disabled = true;
+
+            links.push(entry);
+        }
+
+        let dirName = path.posix.dirname(documentPath);
+        outer_loop:
+        while (dirName != ".") {
+            for (let entry of links) {
+                if (entry.absolute === dirName) {
+                    entry.active = true;
+                    break outer_loop;
+                }
+            }
+
+            dirName = path.posix.dirname(dirName);
+        }
+
+        return {links: links};
+    }
 
     /**
      * Renderes a reference document into an HTML file.
@@ -28,6 +61,7 @@ const Renderer = class Renderer {
     static renderReference(content, view, destination) {
         const dirName = path.relative(path.dirname(destination), "").replace(/\\/g, "/");
         const extendedView = Object.assign({
+            navbar: this.generateNavbar(destination),
             content: content,
             rootPath: (dirName == "") ? "" : (dirName + "/")
         }, view);
@@ -85,7 +119,7 @@ const Renderer = class Renderer {
      */
     static renderDirectory(source, destination, recursive = false) {
         if (fs.statSync(source, "mode").isDirectory()) {
-            if (!fs.existsSync("build/" + destination)) fs.mkdirSync("build/" + destination, {recursive: true});
+            if (!fs.existsSync("build/" + destination)) fs.mkdirSync("build/" + destination, { recursive: true });
             for (let fileName of fs.readdirSync(source, "utf-8")) {
                 const filePath = path.join(source, fileName);
                 const subDestination = path.join(destination, fileName);
@@ -96,7 +130,6 @@ const Renderer = class Renderer {
             }
         } else {
             const view = {
-                navbar: null, //TODO: navbar processing
                 sidepanel: null //TODO: sidepanel processing
             }
 
@@ -165,7 +198,7 @@ const emojis_definition = Object.assign({
     "liko-12": ""
 }, require("markdown-it-emoji/lib/data/full.json"));
 
-md.use(kbd).use(mdReplaceLink).use(emoji, {defs: emojis_definition});
+md.use(kbd).use(mdReplaceLink).use(emoji, { defs: emojis_definition });
 
 md.renderer.rules.emoji = (token, idx, _, env) => {
     if (token[idx].markup == "liko-12") return `<span class="emoji_liko12"></span>`;
