@@ -6,7 +6,8 @@
 			"script": "watch",
 			"group": "build",
 			"label": "npm: watch",
-			"detail": "node . --watch"
+			"detail": "node . --watch",
+			"problemMatcher": []
 		}
 	]
 }
