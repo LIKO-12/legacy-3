@@ -25,6 +25,10 @@ body {
     flex: 1;
 
     display: flex;
+    
+    @media screen and (max-width: 1024px) {
+        align-items: center;
+    }
 }
 
 .content-container {
@@ -33,10 +37,8 @@ body {
     flex: 1;
 
     padding: 0px 35px 20px 35px;
-}
 
-@media screen and (max-width: 720px) {
-    .content-container {
+    @media screen and (max-width: 720px) {
         padding-left: 15px;
         padding-right: 15px;
     }
