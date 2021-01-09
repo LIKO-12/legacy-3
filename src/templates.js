@@ -74,9 +74,9 @@ module.exports = class Templates {
 
             const partialName = partialNamePrefix + path.basename(fileName, path.extname(fileName));
             this.loadPartial(filePath, partialName);
-
-            console.log(("- Loaded templates partials from " + directory + ".").cyan);
         }
+
+        console.log(("- Loaded templates partials from " + directory + ".").cyan);
     }
 
     /**

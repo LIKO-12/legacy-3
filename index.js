@@ -32,6 +32,6 @@ if (process.argv.includes("--watch")) {
         staticWatcher.close();
         pagesWatcher.close();
         templatesWatcher.close();
-        console.log("Terminated live rebuilding.".yellow);
+        console.log("\nTerminated live rebuilding.".yellow);
     });
 }
