@@ -1,7 +1,6 @@
 [
-    ["Home", null],
-    ["Guide", null],
-    ["Reference", null],
+    ["Guide", "guide"],
+    ["Reference", "reference"],
     ["Community", null],
     ["Blog", null]
 ]
