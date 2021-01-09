@@ -572,6 +572,17 @@ fsevents@~2.1.2:
   languageName: node
   linkType: hard
 
+"js-yaml@npm:^4.0.0":
+  version: 4.0.0
+  resolution: "js-yaml@npm:4.0.0"
+  dependencies:
+    argparse: ^2.0.1
+  bin:
+    js-yaml: bin/js-yaml.js
+  checksum: ee9b16cdbba690ec70f46d61737b28b35e26e6d51606c466de7fa876d3517de0cfdffd2e1ef21263d5ca3b32659d2e4c65255f50d6e236f022305bce72242d46
+  languageName: node
+  linkType: hard
+
 "jsbn@npm:~0.1.0":
   version: 0.1.1
   resolution: "jsbn@npm:0.1.1"
@@ -643,6 +654,7 @@ fsevents@~2.1.2:
   dependencies:
     colors: ^1.4.0
     highlight.js: ^10.5.0
+    js-yaml: ^4.0.0
     markdown-it: ^12.0.4
     markdown-it-emoji: ^2.0.0
     markdown-it-kbd: ^2.2.0
