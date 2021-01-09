@@ -3,10 +3,12 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="description" content="DESCRIPTION">
+    
+    
+    
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>TITLE</title>
+    <title>_navbar.json</title>
 
     <link rel="shortcut icon" href="favicon.ico">
     <link rel="stylesheet" href="assets/css/normalize.css">
@@ -43,6 +45,8 @@
             Hello side panel!
         </nav>
         <article class="content-container">
+            
+
             <p>[
 [&quot;Home&quot;, null],
 [&quot;Guide&quot;, null],
