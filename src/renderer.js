@@ -29,8 +29,12 @@ const Renderer = class Renderer {
         const links = [];
         for (let link of navbarConfiguration) {
             const entry = { name: link[0], absolute: link[1] };
-            if (link[1]) entry.href = path.posix.relative(path.posix.dirname(documentPath), link[1]);
-            else entry.disabled = true;
+            if (link[1]) {
+                entry.href = path.posix.relative(path.posix.dirname(documentPath), link[1]);
+                if (entry.href == "") entry.href = "./";
+            } else {
+                entry.disabled = true;
+            }
 
             links.push(entry);
         }
