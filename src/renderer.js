@@ -1,6 +1,7 @@
 require("colors");
 const fs = require("fs");
 const path = require("path");
+const yaml = require("js-yaml");
 const Mustache = require("mustache");
 const Templates = require("./templates");
 const highlight = require("highlight.js");
@@ -45,8 +46,19 @@ const Renderer = class Renderer {
      * pointing to the desination HTML document.
      */
     static renderMarkdownReference(markdown, view, destination) {
+        //Parse embedded view data if present as a heading YAML data:
+        if (markdown.startsWith("---")) {
+            const yamlEndOffset = markdown.indexOf("---", 3);
+            const yamlData = markdown.substring(3, yamlEndOffset);
+            markdown = markdown.substring(yamlEndOffset + 3);
+
+            const extendedView = yaml.load(yamlData);
+            Object.assign(view, extendedView);
+        }
+
         const documentPath = path.dirname(destination).replace(/\\/g, "/");
         const content = md.render(markdown, { documentPath: documentPath });
+
         this.renderReference(content, view, destination);
     }
 
