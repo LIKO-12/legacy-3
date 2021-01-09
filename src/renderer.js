@@ -32,6 +32,9 @@ const Renderer = class Renderer {
             rootPath: (dirName == "") ? "" : (dirName + "/")
         }, view);
 
+        if (!extendedView.window_title) extendedView.window_title = extendedView.title || destination.replace(/.html$/, "").replace(/\\/g, "/");
+        if (extendedView.keywords) extendedView.keywords = extendedView.keywords.join(", ");
+
         const renderedDocument = Mustache.render(Templates.loaded.reference, extendedView, Templates.loadedParitals);
         fs.writeFileSync(path.join("build", destination), renderedDocument, "utf-8");
 
@@ -93,8 +96,6 @@ const Renderer = class Renderer {
             }
         } else {
             const view = {
-                title: "TITLE",
-                description: "DESCRIPTION",
                 navbar: null, //TODO: navbar processing
                 sidepanel: null //TODO: sidepanel processing
             }
