@@ -8,20 +8,20 @@
     
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>markdown-cheatsheet</title>
+    <title>reference&#x2F;website&#x2F;markdown-cheatsheet</title>
 
-    <link rel="shortcut icon" href="favicon.ico">
-    <link rel="stylesheet" href="assets/css/normalize.css">
-    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="shortcut icon" href="..&#x2F;..&#x2F;favicon.ico">
+    <link rel="stylesheet" href="..&#x2F;..&#x2F;assets/css/normalize.css">
+    <link rel="stylesheet" href="..&#x2F;..&#x2F;assets/css/main.css">
 </head>
 
 <body>
     <nav class="navbar">
         <!-- LIKO-12's Logo -->
         <dev class="navbar-logo">
-            <a href="">
-                <img src="assets/img/logo-icon.svg" class="logo-icon">
-                <img src="assets/img/logo-title.svg" class="logo-title">
+            <a href="..&#x2F;..&#x2F;">
+                <img src="..&#x2F;..&#x2F;assets/img/logo-icon.svg" class="logo-icon">
+                <img src="..&#x2F;..&#x2F;assets/img/logo-title.svg" class="logo-title">
             </a>
             <dev class="mobile-spacer"></dev>
             <button class="mobile-toggle"></button>
@@ -34,9 +34,11 @@
         </dev>
 
         <!-- Naviagtion links -->
-        <a href="guide" class="link">Guide</a>
+        <a href="..&#x2F;..&#x2F;guide" class="link">Guide</a>
         
-        <a href="reference" class="link">Reference</a>
+        <a href=".." class="link">Reference</a>
+        
+        <a href=".&#x2F;" class="link active">Contribute</a>
         
         
         <button class="link" disabled>Community</button>
@@ -56,7 +58,10 @@
         <article class="content-container">
             
 
-            <h1>Markdown Testsheet</h1>
+            <h1>Markdown Cheetsheet</h1>
+<blockquote>
+<p>This cheatsheet is taken from <a href="https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet">https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet</a></p>
+</blockquote>
 <h2>Headers</h2>
 <pre><code class="language-markdown"><span class="hljs-section"># H1</span>
 <span class="hljs-section">## H2</span>
@@ -345,52 +350,6 @@ Underscores
 <p>Asterisks</p>
 <hr>
 <p>Underscores</p>
-<h2>Extra markdown tests</h2>
-<p><a href="index.html">/index.html</a></p>
-<p><a href="assets/img/logo-icon.svg">img/logo-icon.svg</a></p>
-<p><img src="assets/img/logo-icon.svg" alt="this should be an image"></p>
-<img src="assets/img/logo-icon.svg" width=128 height=128>
-<pre><code class="language-lua"><span class="hljs-comment">--Ellipses Demo By Rami Sabbagh</span>
-<span class="hljs-comment">--@RamiLego4Game</span>
-
-Controls(<span class="hljs-string">&quot;none&quot;</span>)
-
-<span class="hljs-keyword">local</span> ww = <span class="hljs-number">6</span> <span class="hljs-comment">--Wave width</span>
-<span class="hljs-keyword">local</span> speed = <span class="hljs-number">1</span> <span class="hljs-comment">--Speed</span>
-
-<span class="hljs-keyword">local</span> ww2 = ww*<span class="hljs-number">2</span>
-<span class="hljs-keyword">local</span> ww0 = ww/<span class="hljs-number">2</span>
-
-<span class="hljs-keyword">local</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">ellip</span><span class="hljs-params">(x,y,r)</span></span>
-    <span class="hljs-keyword">if</span> (x+y)%<span class="hljs-number">2</span> == <span class="hljs-number">0</span> <span class="hljs-keyword">then</span> r = r+ww0/<span class="hljs-number">2</span> <span class="hljs-keyword">end</span>
-    <span class="hljs-keyword">local</span> r = r%ww
- 
-    <span class="hljs-keyword">local</span> rx = <span class="hljs-built_in">math</span>.<span class="hljs-built_in">sin</span>((r/ww0)*<span class="hljs-built_in">math</span>.<span class="hljs-built_in">pi</span>)*<span class="hljs-number">9</span>
-    <span class="hljs-keyword">local</span> ry = <span class="hljs-built_in">math</span>.<span class="hljs-built_in">cos</span>((r/ww0)*<span class="hljs-built_in">math</span>.<span class="hljs-built_in">pi</span>)*<span class="hljs-number">9</span>
-    rx = <span class="hljs-built_in">math</span>.<span class="hljs-built_in">abs</span>(rx)
-    ry = <span class="hljs-built_in">math</span>.<span class="hljs-built_in">abs</span>(ry)
- 
- 
-    ellipse(x*<span class="hljs-number">16</span>+<span class="hljs-number">8</span>,y*<span class="hljs-number">16</span>+<span class="hljs-number">8</span>,rx+<span class="hljs-number">1</span>,ry+<span class="hljs-number">1</span>)
-<span class="hljs-keyword">end</span>
-
-<span class="hljs-keyword">local</span> sw, sh = screenSize()
-<span class="hljs-keyword">local</span> cw, ch = sw/<span class="hljs-number">16</span>, sh/<span class="hljs-number">16</span>
-
-<span class="hljs-keyword">local</span> t = ww<span class="hljs-number">-1</span>
-
-<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">_update</span><span class="hljs-params">(dt)</span></span>
-    t = t + dt*speed
-    <span class="hljs-keyword">if</span> t &gt; ww2 <span class="hljs-keyword">then</span> t = t -ww2 <span class="hljs-keyword">end</span>
-    clear()
-    <span class="hljs-keyword">for</span> y=<span class="hljs-number">0</span>,ch<span class="hljs-number">-1</span> <span class="hljs-keyword">do</span>
-        <span class="hljs-keyword">for</span> x=<span class="hljs-number">0</span>,cw<span class="hljs-number">-1</span> <span class="hljs-keyword">do</span>
-            color(<span class="hljs-number">7</span>+(x+y)%<span class="hljs-number">8</span>)
-            ellip(x,y,t)
-        <span class="hljs-keyword">end</span>
-    <span class="hljs-keyword">end</span>
-<span class="hljs-keyword">end</span>
-</code></pre>
 
         </article>
     </div>

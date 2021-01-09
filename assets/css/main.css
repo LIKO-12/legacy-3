@@ -50,6 +50,10 @@ a:hover {
   text-decoration: underline;
 }
 
+ol, ul {
+  padding-left: 30px;
+}
+
 hr {
   border-style: solid;
   border-color: #aeaeae;
@@ -139,10 +143,6 @@ table code {
 @media screen and (max-width: 720px) {
   pre {
     padding: 0.625rem 0.75rem;
-  }
-
-  ol, ul {
-    padding-left: 30px;
   }
 
   table th, table td {

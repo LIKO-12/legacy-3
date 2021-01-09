@@ -38,6 +38,8 @@
         
         <a href="reference" class="link">Reference</a>
         
+        <a href="reference&#x2F;website" class="link">Contribute</a>
+        
         
         <button class="link" disabled>Community</button>
         
@@ -59,6 +61,7 @@
             <p>[
 [&quot;Guide&quot;, &quot;guide&quot;],
 [&quot;Reference&quot;, &quot;reference&quot;],
+[&quot;Contribute&quot;, &quot;reference/website&quot;],
 [&quot;Community&quot;, null],
 [&quot;Blog&quot;, null]
 ]</p>

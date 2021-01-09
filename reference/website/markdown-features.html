@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="The supported markdown features in LIKO-12&#39;s website.">
+    
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Markdown Features</title>
+
+    <link rel="shortcut icon" href="..&#x2F;..&#x2F;favicon.ico">
+    <link rel="stylesheet" href="..&#x2F;..&#x2F;assets/css/normalize.css">
+    <link rel="stylesheet" href="..&#x2F;..&#x2F;assets/css/main.css">
+</head>
+
+<body>
+    <nav class="navbar">
+        <!-- LIKO-12's Logo -->
+        <dev class="navbar-logo">
+            <a href="..&#x2F;..&#x2F;">
+                <img src="..&#x2F;..&#x2F;assets/img/logo-icon.svg" class="logo-icon">
+                <img src="..&#x2F;..&#x2F;assets/img/logo-title.svg" class="logo-title">
+            </a>
+            <dev class="mobile-spacer"></dev>
+            <button class="mobile-toggle"></button>
+
+            <script>
+                const navbarElement = document.querySelector(".navbar");
+                const toggleButton = document.querySelector(".navbar .mobile-toggle");
+                toggleButton.onclick = () => navbarElement.classList.toggle("active");
+            </script>
+        </dev>
+
+        <!-- Naviagtion links -->
+        <a href="..&#x2F;..&#x2F;guide" class="link">Guide</a>
+        
+        <a href=".." class="link">Reference</a>
+        
+        <a href=".&#x2F;" class="link active">Contribute</a>
+        
+        
+        <button class="link" disabled>Community</button>
+        
+        <button class="link" disabled>Blog</button>
+
+        <!-- Spacer -->
+        <dev class="spacer"></dev>
+
+        <!-- Search box -->
+        <input type="text" class="search-box" placeholder="Search documentation" autocomplete>
+    </nav>
+    <div class="main-container">
+        <nav class="side-panel">
+            Hello side panel!
+        </nav>
+        <article class="content-container">
+            <h1>Markdown Features</h1>
+
+            <ul>
+<li>
+<p>All the standard features in the <a href="spec.commonmark.org">CommonMark spec</a></p>
+</li>
+<li>
+<p>Code highlighting is supported using <a href="https://highlightjs.org/">highlight.js</a></p>
+</li>
+<li>
+<p>Absolute links are automatically converted into relative ones.</p>
+</li>
+<li>
+<p>You can link to markdown documents,
+and they'll be automatically translated into <code>.html</code> links.</p>
+</li>
+<li>
+<p>Inline HTML is allowed, but won't be processed for anything.</p>
+</li>
+<li>
+<p>Emojis tags like <img class="emoji" draggable="false" alt="😁" src="https://twemoji.maxcdn.com/v/13.0.1/72x72/1f601.png"/> <code>:grin:</code> are supported.
+The website uses <a href="https://twemoji.twitter.com/">Twemoji</a> to display them.</p>
+</li>
+<li>
+<p>Keyboard shortcuts are supported using <code>[[]]</code>
+Example: <kbd>Ctrl-C</kbd> <code>[[Ctrl-C]]</code>.</p>
+</li>
+<li>
+<p>There are some extended emojis: LIKO-12's icon and macOS keyboard symbol for now.</p>
+</li>
+<li>
+<p>The documents can include some metadata (and they should) in a header
+formatted in YAML, example:</p>
+</li>
+</ul>
+<pre><code class="language-yaml"><span class="hljs-meta">---</span>
+<span class="hljs-attr">title:</span> <span class="hljs-string">It&#x27;ll</span> <span class="hljs-string">be</span> <span class="hljs-string">inserted</span> <span class="hljs-string">as</span> <span class="hljs-string">a</span> <span class="hljs-string">level</span> <span class="hljs-number">1</span> <span class="hljs-string">heading</span> <span class="hljs-string">in</span> <span class="hljs-string">the</span> <span class="hljs-string">document,</span> <span class="hljs-string">and</span> <span class="hljs-string">used</span> <span class="hljs-string">as</span> <span class="hljs-string">a</span> <span class="hljs-string">default</span> <span class="hljs-string">window</span> <span class="hljs-string">title.</span>
+<span class="hljs-attr">window_title:</span> <span class="hljs-string">Can</span> <span class="hljs-string">be</span> <span class="hljs-string">used</span> <span class="hljs-string">when</span> <span class="hljs-string">title</span> <span class="hljs-string">is</span> <span class="hljs-string">ommited,</span> <span class="hljs-string">or</span> <span class="hljs-string">to</span> <span class="hljs-string">override</span> <span class="hljs-string">the</span> <span class="hljs-string">title,</span> <span class="hljs-string">defaults</span> <span class="hljs-string">to</span> <span class="hljs-string">the</span> <span class="hljs-string">document</span> <span class="hljs-string">path.</span>
+<span class="hljs-attr">description:</span> <span class="hljs-string">The</span> <span class="hljs-string">description</span> <span class="hljs-string">of</span> <span class="hljs-string">the</span> <span class="hljs-string">document,</span> <span class="hljs-string">showed</span> <span class="hljs-string">in</span> <span class="hljs-string">link</span> <span class="hljs-string">previews</span> <span class="hljs-string">in</span> <span class="hljs-string">many</span> <span class="hljs-string">modern</span> <span class="hljs-string">chat</span> <span class="hljs-string">systems.</span>
+<span class="hljs-attr">keywords:</span>
+    <span class="hljs-bullet">-</span> <span class="hljs-string">Used</span> <span class="hljs-string">to</span> <span class="hljs-string">boost</span>
+    <span class="hljs-bullet">-</span> <span class="hljs-string">Search</span> <span class="hljs-string">engines</span>
+    <span class="hljs-bullet">-</span> <span class="hljs-string">Please</span> <span class="hljs-string">use</span> <span class="hljs-string">them</span>
+    <span class="hljs-bullet">-</span> <span class="hljs-string">When</span> <span class="hljs-string">possible</span>
+<span class="hljs-meta">---
+</span>
+<span class="hljs-comment">## The website content</span>
+</code></pre>
+<blockquote>
+<p>All the fields are optional. But at least try to specify the title, and the description please.</p>
+</blockquote>
+<h2>Extended Emojis</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Name</th>
+<th style="text-align:center">Emoji</th>
+<th style="text-align:center">Emoji Tag</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">LIKO-12</td>
+<td style="text-align:center"><span class="emoji_liko12"></span></td>
+<td style="text-align:center"><code>:liko-12:</code></td>
+</tr>
+</tbody>
+</table>
+<h3>macOS keyboard symbols</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Name</th>
+<th style="text-align:center">Symbol</th>
+<th style="text-align:center">Shortcut</th>
+<th style="text-align:center">Emoji Tag</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">Command</td>
+<td style="text-align:center">⌘</td>
+<td style="text-align:center"><kbd>⌘</kbd></td>
+<td style="text-align:center"><code>:cmd:</code></td>
+</tr>
+<tr>
+<td style="text-align:left">Alt</td>
+<td style="text-align:center">⌥</td>
+<td style="text-align:center"><kbd>⌥</kbd></td>
+<td style="text-align:center"><code>:alt:</code></td>
+</tr>
+<tr>
+<td style="text-align:left">Shift</td>
+<td style="text-align:center">⇧</td>
+<td style="text-align:center"><kbd>⇧</kbd></td>
+<td style="text-align:center"><code>:shift:</code></td>
+</tr>
+<tr>
+<td style="text-align:left">Ctrl</td>
+<td style="text-align:center">⌃</td>
+<td style="text-align:center"><kbd>⌃</kbd></td>
+<td style="text-align:center"><code>:ctrl:</code></td>
+</tr>
+</tbody>
+</table>
+
+        </article>
+    </div>
+</body>
+
+</html>
