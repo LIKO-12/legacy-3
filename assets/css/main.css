@@ -186,17 +186,30 @@ table code {
   font: 400 18px/24px "Segoe UI", "Open Sans", Tahoma, Geneva, Verdana, sans-serif;
   align-items: center;
   text-decoration: none;
+  cursor: pointer;
 }
 .navbar a:visited {
   color: #969696;
+}
+.navbar a.active {
+  color: #cecece;
+  background-color: rgba(0, 0, 0, 0.15);
 }
 .navbar a:hover {
   color: #bfbfbf;
   background: rgba(0, 0, 0, 0.25);
 }
-.navbar a.active {
-  color: #cecece;
-  text-decoration: underline;
+.navbar button {
+  height: 100%;
+  display: flex;
+  margin: 0;
+  padding: 0px 10px;
+  background-color: transparent;
+  color: #696969;
+  font: 400 18px/24px "Segoe UI", "Open Sans", Tahoma, Geneva, Verdana, sans-serif;
+  align-items: center;
+  text-decoration: none;
+  border: none;
 }
 .navbar .spacer {
   flex: 1;
@@ -245,7 +258,7 @@ table code {
     flex: 1;
     display: block;
   }
-  .navbar a {
+  .navbar .link {
     display: none;
     height: 50px;
     padding: 0 20px;
@@ -274,7 +287,7 @@ table code {
     height: auto;
     padding-bottom: 10px;
   }
-  .navbar.active a {
+  .navbar.active .link {
     display: flex;
   }
   .navbar.active .search-box {
@@ -286,10 +299,6 @@ table code {
 
   .navbar-logo {
     margin: 0 0 0 20px;
-  }
-
-  .side-panel {
-    display: none !important;
   }
 }
 .side-panel {
@@ -395,7 +404,6 @@ body {
 }
 @media screen and (max-width: 1024px) {
   .main-container {
-    align-items: center;
     justify-content: center;
   }
 }

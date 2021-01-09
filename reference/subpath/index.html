@@ -8,20 +8,20 @@
     
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>_navbar.json</title>
+    <title>reference&#x2F;subpath&#x2F;index</title>
 
-    <link rel="shortcut icon" href="favicon.ico">
-    <link rel="stylesheet" href="assets/css/normalize.css">
-    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="shortcut icon" href="..&#x2F;..&#x2F;favicon.ico">
+    <link rel="stylesheet" href="..&#x2F;..&#x2F;assets/css/normalize.css">
+    <link rel="stylesheet" href="..&#x2F;..&#x2F;assets/css/main.css">
 </head>
 
 <body>
     <nav class="navbar">
         <!-- LIKO-12's Logo -->
         <dev class="navbar-logo">
-            <a href="">
-                <img src="assets/img/logo-icon.svg" class="logo-icon">
-                <img src="assets/img/logo-title.svg" class="logo-title">
+            <a href="..&#x2F;..&#x2F;">
+                <img src="..&#x2F;..&#x2F;assets/img/logo-icon.svg" class="logo-icon">
+                <img src="..&#x2F;..&#x2F;assets/img/logo-title.svg" class="logo-title">
             </a>
             <dev class="mobile-spacer"></dev>
             <button class="mobile-toggle"></button>
@@ -34,9 +34,9 @@
         </dev>
 
         <!-- Naviagtion links -->
-        <a href="guide" class="link">Guide</a>
+        <a href="..&#x2F;..&#x2F;guide" class="link">Guide</a>
         
-        <a href="reference" class="link">Reference</a>
+        <a href=".." class="link active">Reference</a>
         
         
         <button class="link" disabled>Community</button>
@@ -56,12 +56,12 @@
         <article class="content-container">
             
 
-            <p>[
-[&quot;Guide&quot;, &quot;guide&quot;],
-[&quot;Reference&quot;, &quot;reference&quot;],
-[&quot;Community&quot;, null],
-[&quot;Blog&quot;, null]
-]</p>
+            <h1>Subpath</h1>
+<p>This is a document in a sub path.</p>
+<ul>
+<li><a href="../../index.html">This is a relative link to index.md</a></li>
+<li><a href="../..">This is an absolute link to index.md</a></li>
+</ul>
 
         </article>
     </div>
