@@ -1,3 +1,5 @@
 {
-    "MD033": false //In-line HTML is allowed
+    "MD013": false, //Ignore line length, that's very annoying.
+    "MD033": false, //In-line HTML is allowed.
+    "MD034": false  //Bare links are supported.
 }
