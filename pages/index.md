@@ -1,3 +1,19 @@
+---
+window_title: LIKO-12
+description: An open-source fantasy computer!
+author: Rami Sabbagh (@rami_sabbagh)
+keywords:
+    - Fantasy
+    - Computer
+    - Console
+    - Lua
+    - Open-source
+    - Retro
+    - Tool
+    - Programming
+    - LIKO-12
+---
+
 # :liko-12: LIKO-12
 
 Welcome to the website of LIKO-12!
