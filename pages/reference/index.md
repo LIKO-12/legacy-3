@@ -10,3 +10,12 @@ keywords:
 ---
 
 > Please note that the reference is still work in progress :warning:
+
+## Contributing to the website
+
+Contributions to the website are more than welcome!
+
+Go to [website contribution reference](website/) to get started.
+
+> **Note from the developer:** The website is still under heavy development,
+and still not quite ready for contribution. So please wait until I state it's ready for receiving your help!

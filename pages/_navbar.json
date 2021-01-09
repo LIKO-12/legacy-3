@@ -1,6 +1,7 @@
 [
     ["Guide", "guide"],
     ["Reference", "reference"],
+    ["Contribute", "reference/website"],
     ["Community", null],
     ["Blog", null]
 ]
