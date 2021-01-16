@@ -1,0 +1,22 @@
+{
+  "name": "liko-12-website",
+  "version": "1.0.0",
+  "description": "LIKO-12's GitHub Website. A staticly generated website.",
+  "private": true,
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LIKO-12/new.git"
+  },
+  "keywords": [
+    "LIKO-12"
+  ],
+  "author": "Rami Sabbagh (@Rami-Sabbagh)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/LIKO-12/new/issues"
+  },
+  "homepage": "https://github.com/LIKO-12/new#readme"
+}
