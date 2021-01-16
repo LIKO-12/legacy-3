@@ -1,0 +1,32 @@
+.root {
+    width: 100%;
+    min-width: min-content;
+    min-height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.main_container {
+    width: 100%;
+    flex: 1;
+
+    display: flex;
+    
+    @media screen and (max-width: 1024px) {
+        justify-content: center;
+    }
+}
+
+.content_container {
+    min-width: 0px;
+    max-width: 784px;
+    flex: 1;
+
+    padding: 0px 35px 20px 35px;
+
+    @media screen and (max-width: 720px) {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+}
