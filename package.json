@@ -22,6 +22,7 @@
   },
   "homepage": "https://github.com/LIKO-12/new#readme",
   "dependencies": {
+    "gray-matter": "^4.0.2",
     "highlight.js": "^10.5.0",
     "markdown-it": "^12.0.4",
     "markdown-it-emoji": "^2.0.0",
