@@ -1,4 +1,4 @@
-import { getBasePath } from "./lib/utils";
+const { getBasePath } = require("./lib/utils");
 
 module.exports = {
     basePath: getBasePath()
