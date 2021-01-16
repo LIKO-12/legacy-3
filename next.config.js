@@ -1,7 +1,5 @@
-const production = process.env.NODE_ENV === "production"
-
-if (production) console.log("PRODUCTION");
+import { getBasePath } from "./lib/utils";
 
 module.exports = {
-    basePath: production ? "/new" : ""
+    basePath: getBasePath()
 }
