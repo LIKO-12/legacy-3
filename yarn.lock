@@ -2524,6 +2524,13 @@ fsevents@~2.3.1:
   languageName: node
   linkType: hard
 
+"highlight.js@npm:^10.5.0":
+  version: 10.5.0
+  resolution: "highlight.js@npm:10.5.0"
+  checksum: 00cfa96a725a7fe3f2e4f594303cfb69682414c2e6f1d2e3827bc7c738d8402491fcd5d92db2a3bb210d3d674873298d4a0d05cd78e6fe78a1e8137980a92722
+  languageName: node
+  linkType: hard
+
 "hmac-drbg@npm:^1.0.0":
   version: 1.0.1
   resolution: "hmac-drbg@npm:1.0.1"
@@ -3038,6 +3045,7 @@ fsevents@~2.3.1:
   version: 0.0.0-use.local
   resolution: "liko-12-website@workspace:."
   dependencies:
+    highlight.js: ^10.5.0
     next: ^10.0.5
     react: ^17.0.1
     react-dom: ^17.0.1
