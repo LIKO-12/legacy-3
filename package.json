@@ -4,7 +4,9 @@
   "description": "LIKO-12's GitHub Website. A staticly generated website.",
   "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
   },
   "repository": {
     "type": "git",
@@ -18,5 +20,10 @@
   "bugs": {
     "url": "https://github.com/LIKO-12/new/issues"
   },
-  "homepage": "https://github.com/LIKO-12/new#readme"
+  "homepage": "https://github.com/LIKO-12/new#readme",
+  "dependencies": {
+    "next": "^10.0.5",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1"
+  }
 }
