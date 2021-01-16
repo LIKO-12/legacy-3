@@ -23,6 +23,10 @@
   "homepage": "https://github.com/LIKO-12/new#readme",
   "dependencies": {
     "highlight.js": "^10.5.0",
+    "markdown-it": "^12.0.4",
+    "markdown-it-emoji": "^2.0.0",
+    "markdown-it-kbd": "^2.2.0",
+    "markdown-it-replace-link": "^1.1.0",
     "next": "^10.0.5",
     "normalize.css": "^8.0.1",
     "react": "^17.0.1",

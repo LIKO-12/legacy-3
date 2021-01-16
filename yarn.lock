@@ -566,6 +566,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"argparse@npm:^2.0.1":
+  version: 2.0.1
+  resolution: "argparse@npm:2.0.1"
+  checksum: 160b7a25d2a7097fd5fdf25eb8a99e037340078f70e6c7cfdef305837ed14d54570b2b13261bcae26c8cd44ad6e9a7136a0110d815ac65a7891c69c7bf2f4afd
+  languageName: node
+  linkType: hard
+
 "arity-n@npm:^1.0.4":
   version: 1.0.4
   resolution: "arity-n@npm:1.0.4"
@@ -1866,7 +1873,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"entities@npm:^2.0.0":
+"entities@npm:^2.0.0, entities@npm:~2.1.0":
   version: 2.1.0
   resolution: "entities@npm:2.1.0"
   checksum: 91d5330633b97df881bcd02e233d32067876d45abdc7c75cf058ded524d8b22f8dc7a3965813d6982ceeba918abdbd9029a0459759ee5f6f98ec953a4786612f
@@ -3082,6 +3089,10 @@ fsevents@~2.3.1:
   resolution: "liko-12-website@workspace:."
   dependencies:
     highlight.js: ^10.5.0
+    markdown-it: ^12.0.4
+    markdown-it-emoji: ^2.0.0
+    markdown-it-kbd: ^2.2.0
+    markdown-it-replace-link: ^1.1.0
     next: ^10.0.5
     normalize.css: ^8.0.1
     react: ^17.0.1
@@ -3098,6 +3109,15 @@ fsevents@~2.3.1:
     isarray: ^1.0.0
     isobject: ^2.0.0
   checksum: e6fa785b0c75c4485d0f181beaeb2f0b482ebf16921b64d5b61e75e86a61504b42053655d481b1c8de5c4d8b551473c034eb48780c65d76be377e643d395f6e5
+  languageName: node
+  linkType: hard
+
+"linkify-it@npm:^3.0.1":
+  version: 3.0.2
+  resolution: "linkify-it@npm:3.0.2"
+  dependencies:
+    uc.micro: ^1.0.1
+  checksum: bbc23f16d52d25b374971c681af1e3bb20af7ef59c243b4329c6bff5f06780784553150d4c14a16d45c9fecfc1478a7a6b79502b2c6b81d2e817f0da259046b2
   languageName: node
   linkType: hard
 
@@ -3238,6 +3258,42 @@ fsevents@~2.3.1:
   languageName: node
   linkType: hard
 
+"markdown-it-emoji@npm:^2.0.0":
+  version: 2.0.0
+  resolution: "markdown-it-emoji@npm:2.0.0"
+  checksum: e277818e1434ccbd26485993200dbf6ceed6ffe1927b2573f99c5c7490a497d4b644140648d1f0c3de082e9bc1f482438ca4641fbbe7ef0dc85ed1d5f1b81bb0
+  languageName: node
+  linkType: hard
+
+"markdown-it-kbd@npm:^2.2.0":
+  version: 2.2.0
+  resolution: "markdown-it-kbd@npm:2.2.0"
+  checksum: 9277b100821795bb7c646ab856685a458d8c6daa0e375645ab51eba88da7729890e129eee80e78f8d4aa79fc78acbb8bd45dc05903e010ab5044d678089e02bb
+  languageName: node
+  linkType: hard
+
+"markdown-it-replace-link@npm:^1.1.0":
+  version: 1.1.0
+  resolution: "markdown-it-replace-link@npm:1.1.0"
+  checksum: 3195c7c47176809012756f53efd6f3383f0f5829f2d868bd3bdb0f52db486c5352825cb29038155f38425774129b73c6000487ac6b696588a23baa3f720708ad
+  languageName: node
+  linkType: hard
+
+"markdown-it@npm:^12.0.4":
+  version: 12.0.4
+  resolution: "markdown-it@npm:12.0.4"
+  dependencies:
+    argparse: ^2.0.1
+    entities: ~2.1.0
+    linkify-it: ^3.0.1
+    mdurl: ^1.0.1
+    uc.micro: ^1.0.5
+  bin:
+    markdown-it: bin/markdown-it.js
+  checksum: 6331b09e1c624def68c8a00e4a6c0237e720d37a6ecd063a583b727d8196264ad5fb473bbc4b589a36bdb0468f17ef60620cbe2993c7fb77965fdd2880671774
+  languageName: node
+  linkType: hard
+
 "md5.js@npm:^1.3.4":
   version: 1.3.5
   resolution: "md5.js@npm:1.3.5"
@@ -3246,6 +3302,13 @@ fsevents@~2.3.1:
     inherits: ^2.0.1
     safe-buffer: ^5.1.2
   checksum: ca0b260ea29746f1017ad16bc0e164299ae453d2d6a24d635cc6ec03e280f350b09faa4899bfed9387c81457ca55981e9a684336d89faa94b1d2a01903fae2ec
+  languageName: node
+  linkType: hard
+
+"mdurl@npm:^1.0.1":
+  version: 1.0.1
+  resolution: "mdurl@npm:1.0.1"
+  checksum: ed5e81efed218ca1cb61bbb5c41857c98ce456382d630a2f45a1b050087a10119a24107ca1acd4ccef2f1a17b02b8d61fb3c630d3d7c0f22df906dbdd2e5f7b5
   languageName: node
   linkType: hard
 
@@ -5505,6 +5568,13 @@ fsevents@~2.3.1:
   version: 0.0.6
   resolution: "typedarray@npm:0.0.6"
   checksum: c9ef0176aaf32593514c31e5c6edc1db970847aff6e1f0a0570a6ac0cc996335792f394c2fcec59cc76691d22a01888ea073a2f3c6930cfcf7c519addf4e2ad7
+  languageName: node
+  linkType: hard
+
+"uc.micro@npm:^1.0.1, uc.micro@npm:^1.0.5":
+  version: 1.0.6
+  resolution: "uc.micro@npm:1.0.6"
+  checksum: 9dfe5ad0a08059c3eb6ded70b7cfb6fdcb5908b385af9d4717cee7f140571f5c2bb89405093ace07cfd0e283f409495d2feafd321b4b703c1fa3014e129dab27
   languageName: node
   linkType: hard
 
