@@ -1,9 +1,23 @@
 import React from 'react';
 import Link from 'next/link';
-
+import { useRouter } from 'next/router';
+import styles from './navbar.module.scss';
+import configuration from '../docs/_navbar.json';
 import Logo from './logo';
 
-import styles from './navbar.module.scss';
+function NavbarLink({ configEntry: [ name, path ] }) {
+    if (!path) return <button className={styles.link} disabled> {name} </button>;
+    const router = useRouter();
+
+    const isActive = router.asPath.startsWith(path);
+    const activeClass = isActive ? (' ' + styles.active) : '';
+
+    return (
+        <Link href={path}>
+            <a className={styles.link + activeClass}> {name} </a>
+        </Link>
+    );
+}
 
 export default class NavBar extends React.Component {
 
@@ -34,21 +48,13 @@ export default class NavBar extends React.Component {
                 </div>
 
                 {/* Navigation Links */}
-                {this.props.links && this.props.links.map(link => {
-                    if (link.disabled) {
-                        return <button className={styles.link} disabled>{link.name}</button>;
-                    } else {
-                        return (<Link href={link.href}>
-                            <a className={styles.link + (link.active ? (" " + styles.active) : "")}>{link.name}</a>
-                        </Link>);
-                    }
-                }) || null}
+                {configuration.map(entry => <NavbarLink key={entry[0]} configEntry={entry} />)}
 
                 {/* Spacer */}
                 <div className={styles.spacer} />
 
                 {/* Search Box */}
-                <input type="text" className={styles.search_box} placeholder="Search documentation" autoComplete="true"/>
+                <input type="text" className={styles.search_box} placeholder="Search documentation" autoComplete="true" />
             </nav>
         );
     }
