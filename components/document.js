@@ -10,7 +10,7 @@ export default function Document({ documentData={} }) {
             <link rel="shortcut icon" href="/favicon.ico" />
         </Head>
 
-        <NavBar links={documentData.links} />
+        <NavBar />
 
         <div className={styles.main_container}>
             <SidePanel />
