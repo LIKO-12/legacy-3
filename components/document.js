@@ -3,7 +3,7 @@ import NavBar from './navbar';
 import SidePanel from './sidepanel';
 import styles from './document.module.scss';
 
-export default function Document({ documentData={} }) {
+export default function Document({ children }) {
     return (<div className={styles.root}>
         <Head>
             <link rel="shortcut icon" href="/favicon.ico" />
@@ -13,10 +13,7 @@ export default function Document({ documentData={} }) {
 
         <div className={styles.main_container}>
             <SidePanel />
-
-            <article className={styles.content_container} dangerouslySetInnerHTML={{__html: documentData.contentHtml}}>
-
-            </article>
+            <div className={styles.content_container}>{children}</div>
         </div>
     </div>);
 }
