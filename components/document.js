@@ -1,8 +1,7 @@
-import Head from "next/head";
-import NavBar from "./navbar";
-import SidePanel from "./sidepanel";
-
-import styles from "./document.module.scss";
+import Head from 'next/head';
+import NavBar from './navbar';
+import SidePanel from './sidepanel';
+import styles from './document.module.scss';
 
 export default function Document({ documentData={} }) {
     return (<div className={styles.root}>

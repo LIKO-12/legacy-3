@@ -1,6 +1,5 @@
-import { getDocumentData, getAllDocumentsPaths } from "../../lib/docs";
-
-import Document from "../../components/document";
+import { getDocumentData, getAllDocumentsPaths } from '../../lib/docs';
+import Document from '../../components/document';
 
 export default function DocumentPage(props) {
     return <Document {...props} />;
@@ -18,10 +17,8 @@ export async function getStaticProps({ params }) {
 }
 
 export async function getStaticPaths() {
-    const paths = getAllDocumentsPaths();
-
     return {
-        paths,
+        paths: getAllDocumentsPaths(),
         fallback: false
     }
 }
