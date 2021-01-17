@@ -1,7 +1,7 @@
 [
-    ["Guide", "docs/guide"],
-    ["Reference", "docs/reference"],
-    ["Contribute", "docs/reference/website"],
+    ["Guide", "/docs/guide"],
+    ["Reference", "/docs/reference"],
+    ["Contribute", "/docs/reference/website"],
     ["Community", null],
     ["Blog", null]
 ]
