@@ -1,8 +1,12 @@
 import { getDocumentData, getAllDocumentsPaths } from '../../lib/docs';
 import Document from '../../components/document';
 
-export default function DocumentPage(props) {
-    return <Document {...props} />;
+export default function DocumentPage({ documentData: { contentHtml } }) {
+    return (
+        <Document>
+            <article dangerouslySetInnerHTML={{ __html: contentHtml }} />
+        </Document>
+    );
 }
 
 export async function getStaticProps({ params }) {
