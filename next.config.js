@@ -1,5 +1,5 @@
-const { getBasePath } = require("./lib/utils");
+const production = process.env.NODE_ENV === "production"
 
 module.exports = {
-    basePath: getBasePath()
+    basePath: production ? "/new" : ""
 }
