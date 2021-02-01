@@ -1,11 +1,12 @@
-import React from 'react';
-import Link from 'next/link';
+import React, { useState, useCallback } from 'react';
 import { useRouter } from 'next/router';
+import Link from 'next/link';
+
+import Logo from './logo';
 import styles from './navbar.module.scss';
 import configuration from '../docs/_navbar.json';
-import Logo from './logo';
 
-function NavbarLink({ configEntry: [ name, path ] }) {
+function NavbarLink({ configEntry: [name, path] }) {
     if (!path) return <button className={styles.link} disabled> {name} </button>;
     const router = useRouter();
 
@@ -19,43 +20,30 @@ function NavbarLink({ configEntry: [ name, path ] }) {
     );
 }
 
-export default class NavBar extends React.Component {
+export default function NavBar(props) {
+    const [active, setActive] = useState(false);
+    const toggleActive = useCallback(() => setActive(!active), [active]);
 
-    constructor(props) {
-        super(props);
-        this.state = { active: false };
+    return (
+        <nav className={styles.navbar + (active ? (" " + styles.active) : "")}>
+            {/* LIKO-12's Logo */}
+            <div className={styles.navbar_logo}>
+                <Link href="/">
+                    <a><Logo /></a>
+                </Link>
 
-        this.handleMobileToggle = this.handleMobileToggle.bind(this);
-    }
+                <div className={styles.mobile_spacer} />
+                <button className={styles.mobile_toggle} onClick={toggleActive} />
+            </div>
 
-    handleMobileToggle() {
-        this.setState(state => ({
-            active: !state.active
-        }));
-    }
+            {/* Navigation Links */}
+            {configuration.map(entry => <NavbarLink key={entry[0]} configEntry={entry} />)}
 
-    render() {
-        return (
-            <nav className={styles.navbar + (this.state.active ? (" " + styles.active) : "")}>
-                {/* LIKO-12's Logo */}
-                <div className={styles.navbar_logo}>
-                    <Link href="/">
-                        <a><Logo /></a>
-                    </Link>
+            {/* Spacer */}
+            <div className={styles.spacer} />
 
-                    <div className={styles.mobile_spacer} />
-                    <button className={styles.mobile_toggle} onClick={this.handleMobileToggle} />
-                </div>
-
-                {/* Navigation Links */}
-                {configuration.map(entry => <NavbarLink key={entry[0]} configEntry={entry} />)}
-
-                {/* Spacer */}
-                <div className={styles.spacer} />
-
-                {/* Search Box */}
-                <input type="text" className={styles.search_box} placeholder="Search documentation" autoComplete="true" />
-            </nav>
-        );
-    }
+            {/* Search Box */}
+            <input type="text" className={styles.search_box} placeholder="Search documentation" autoComplete="true" />
+        </nav>
+    );
 }
