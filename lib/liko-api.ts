@@ -359,8 +359,20 @@ export function isCustomType(type: ComplexLuaType): type is CustomLuaType {
     return Array.isArray(type);
 }
 
+export function isLiteralArgument(argument: Argument): argument is LiteralArgument {
+    return (argument as VariableArgument).name === undefined;
+}
+
+export function isVariableArgument(argument: Argument): argument is VariableArgument {
+    return (argument as VariableArgument).name !== undefined;
+}
+
 export function isSingleUsageMethod(method: LuaMethod): method is SingleUsageMethod {
     return (method as MultiUsageMethod).usages === undefined;
+}
+
+export function isMultiUsageMethod(method: LuaMethod): method is MultiUsageMethod {
+    return (method as MultiUsageMethod).usages !== undefined;
 }
 
 export default jsonData as unknown as Documentation;
