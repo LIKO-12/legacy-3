@@ -12,7 +12,7 @@ export type StandardLuaType = 'number' | 'string' | 'boolean' | 'nil' | 'table' 
  * It's represented by a string array, containing the property names to reach the object definition.
  * For example ['Peripherals', 'GPU', 'objects', 'image'] would be likoAPI.Peripherals.GPU.objects.image;
  */
-export type CustomLuaType = string[];
+export type CustomLuaType = ['Peripherals', string, 'objects', string];
 
 /**
  * A single Lua type specified.
