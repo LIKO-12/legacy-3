@@ -3,7 +3,7 @@ import NavBar from './navbar';
 import SidePanel from './sidepanel';
 import styles from './document.module.scss';
 
-const Document: React.FC = ({ children }) => {
+export default function Document({ children }: React.PropsWithChildren<{}>) {
     return (
         <div className={styles.root}>
             <Head>
@@ -19,5 +19,3 @@ const Document: React.FC = ({ children }) => {
         </div>
     );
 }
-
-export default Document;

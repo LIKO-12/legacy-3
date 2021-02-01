@@ -9,8 +9,7 @@ import configurationJson from '../docs/_navbar.json';
 type NavbarConfigEntry = [name: string, path: string | null];
 const configuration = configurationJson as NavbarConfigEntry[];
 
-type NavbarLinkProps = { configEntry: NavbarConfigEntry };
-const NavbarLink: React.FC<NavbarLinkProps> = ({ configEntry: [name, path] }) => {
+function NavbarLink({ configEntry: [name, path] }: { configEntry: NavbarConfigEntry }) {
     if (!path) return <button className={styles.link} disabled> {name} </button>;
     const router = useRouter();
 
@@ -24,7 +23,7 @@ const NavbarLink: React.FC<NavbarLinkProps> = ({ configEntry: [name, path] }) =>
     );
 }
 
-const NavBar: React.FC = () => {
+export default function NavBar() {
     const [active, setActive] = useState(false);
     const toggleActive = () => setActive(!active);
 
@@ -51,5 +50,3 @@ const NavBar: React.FC = () => {
         </nav>
     );
 }
-
-export default NavBar;

@@ -4,7 +4,7 @@ import styles from './logo.module.scss';
 /**
  * The LIKO-12's logo as visible in the navbar (the icon and the title next to it).
  */
-const Logo: React.FC = () => {
+export default function Logo() {
     const router = useRouter();
 
     return (<>
@@ -12,5 +12,3 @@ const Logo: React.FC = () => {
         <img src={router.basePath + '/assets/img/logo-title.svg'} className={styles.logo_title} />
     </>);
 }
-
-export default Logo;

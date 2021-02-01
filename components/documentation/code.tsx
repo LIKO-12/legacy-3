@@ -7,7 +7,7 @@ interface CodeProps {
     args: D.Argument[] | undefined,
     returns: D.ReturnValue[] | undefined
 }
-const Code: React.FC<CodeProps> = ({ parent, name, args, returns }) => {
+export default function Code({ parent, name, args, returns }: CodeProps) {
 
     const exampleCode = [];
 
@@ -19,5 +19,3 @@ const Code: React.FC<CodeProps> = ({ parent, name, args, returns }) => {
 
     return <pre><code className="language-lua" dangerouslySetInnerHTML={{__html: highlight.highlight('Lua', exampleCode.join('')).value}}/></pre>;
 }
-
-export default Code;

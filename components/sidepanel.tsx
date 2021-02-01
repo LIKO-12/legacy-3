@@ -1,7 +1,7 @@
 import styles from './sidepanel.module.scss';
 import { useRouter } from 'next/router';
 
-const SidePanel: React.FC = () => {
+export default function SidePanel() {
     const router = useRouter();
 
     return (
@@ -16,5 +16,3 @@ const SidePanel: React.FC = () => {
         </nav>
     );
 }
-
-export default SidePanel;

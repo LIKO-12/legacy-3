@@ -24,7 +24,7 @@ interface MethodProps {
      */
     method: D.LuaMethod
 };
-const Method: React.FC<MethodProps> = ({ parent, name, method }) => {
+export default function Method({ parent, name, method }: MethodProps) {
     return (<>
         <h3>{parent !== undefined ? parent + '.' : null}{name}</h3>
         <p>{method.shortDescription}</p>
@@ -43,5 +43,3 @@ const Method: React.FC<MethodProps> = ({ parent, name, method }) => {
 
     </>);
 };
-
-export default Method;
