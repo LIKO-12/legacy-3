@@ -4,9 +4,10 @@ import Link from 'next/link';
 
 import Logo from './logo';
 import styles from './navbar.module.scss';
-import configuration from '../docs/_navbar.json';
+import configurationJson from '../docs/_navbar.json';
 
-type NavbarConfigEntry = [name: string, path: string];
+type NavbarConfigEntry = [name: string, path: string | null];
+const configuration = configurationJson as NavbarConfigEntry[];
 
 type NavbarLinkProps = { configEntry: NavbarConfigEntry };
 const NavbarLink: React.FC<NavbarLinkProps> = ({ configEntry: [name, path] }) => {
