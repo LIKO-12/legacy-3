@@ -6,7 +6,10 @@ import Logo from './logo';
 import styles from './navbar.module.scss';
 import configuration from '../docs/_navbar.json';
 
-function NavbarLink({ configEntry: [name, path] }) {
+type NavbarConfigEntry = [name: string, path: string];
+
+type NavbarLinkProps = { configEntry: NavbarConfigEntry };
+const NavbarLink: React.FC<NavbarLinkProps> = ({ configEntry: [name, path] }) => {
     if (!path) return <button className={styles.link} disabled> {name} </button>;
     const router = useRouter();
 
@@ -20,7 +23,7 @@ function NavbarLink({ configEntry: [name, path] }) {
     );
 }
 
-export default function NavBar(props) {
+const NavBar: React.FC = () => {
     const [active, setActive] = useState(false);
     const toggleActive = useCallback(() => setActive(!active), [active]);
 
@@ -37,7 +40,7 @@ export default function NavBar(props) {
             </div>
 
             {/* Navigation Links */}
-            {configuration.map(entry => <NavbarLink key={entry[0]} configEntry={entry} />)}
+            {configuration.map((entry: NavbarConfigEntry) => <NavbarLink key={entry[0]} configEntry={entry} />)}
 
             {/* Spacer */}
             <div className={styles.spacer} />
@@ -47,3 +50,5 @@ export default function NavBar(props) {
         </nav>
     );
 }
+
+export default NavBar;

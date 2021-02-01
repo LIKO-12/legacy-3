@@ -1,3 +1,4 @@
+import { GetStaticProps, GetStaticPaths } from 'next';
 import { getDocumentData, getAllDocumentsPaths } from '../../lib/docs';
 import Document from '../../components/document';
 
@@ -10,14 +11,14 @@ export default function DocumentPage({ documentData: { title, contentHtml } }) {
     );
 }
 
-export async function getStaticProps({ params }) {
+export const getStaticProps: GetStaticProps = async ({ params }) => {
     const id = params.id instanceof Array ? params.id.join("/") : (params.id || "");
     const documentData = await getDocumentData(id);
 
     return { props: { documentData } }
 }
 
-export async function getStaticPaths() {
+export const getStaticPaths: GetStaticPaths = async () => {
     return {
         paths: getAllDocumentsPaths(),
         fallback: false
