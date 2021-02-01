@@ -207,10 +207,51 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/highlight.js@npm:^9.7.0":
+  version: 9.12.4
+  resolution: "@types/highlight.js@npm:9.12.4"
+  checksum: 3aea09c0961ea5054be8ea4756d8936756b2c72e568b45a4a5cc8ab7aa8eaf1e9090bf9bc00f12c1b15ba71b3450a9068b6e6e768fad8ef072f2c864d75c922e
+  languageName: node
+  linkType: hard
+
 "@types/json-schema@npm:^7.0.5, @types/json-schema@npm:^7.0.6":
   version: 7.0.6
   resolution: "@types/json-schema@npm:7.0.6"
   checksum: 820cabe35ac915b93e38b0c01957e5c49d7d9f69251dddfbf39af0ff4fe24f6e08b39e55603e0d212dea7bcaa383b1218b58a738d1c02013dc22df06547ff238
+  languageName: node
+  linkType: hard
+
+"@types/linkify-it@npm:*":
+  version: 3.0.0
+  resolution: "@types/linkify-it@npm:3.0.0"
+  checksum: f7817ff8e9f6e7797bfe94ff45e18cbe5855f621f8e336f91527c9848ac558d63a239011e43cae4f77f022b4de660970889242b2f69ea0040b8ddcb7f6b70fc5
+  languageName: node
+  linkType: hard
+
+"@types/markdown-it-emoji@npm:^2.0.0":
+  version: 2.0.0
+  resolution: "@types/markdown-it-emoji@npm:2.0.0"
+  dependencies:
+    "@types/markdown-it": "*"
+  checksum: e9fbd1805f509f62ed28508e17d9cbc40029ebb4d31ec236f66536faccd30d1a8a91cf2c8de6b712eef25261ec47ff1d301d291e3284cea665db82e573410e90
+  languageName: node
+  linkType: hard
+
+"@types/markdown-it@npm:*, @types/markdown-it@npm:^12.0.1":
+  version: 12.0.1
+  resolution: "@types/markdown-it@npm:12.0.1"
+  dependencies:
+    "@types/highlight.js": ^9.7.0
+    "@types/linkify-it": "*"
+    "@types/mdurl": "*"
+  checksum: 3ced78ec408b185509f05b81381a6ffe67ac26fca89a352f2479c39b7dc86f1c999a925deaa23f56cf5c57f47aebeb1508035174c83b065bd0bdb0fd3b6cf617
+  languageName: node
+  linkType: hard
+
+"@types/mdurl@npm:*":
+  version: 1.0.2
+  resolution: "@types/mdurl@npm:1.0.2"
+  checksum: e4034ca52671387682a22a06164356ab88760e8e8805225e512533df6b4c281c4dce64845b595fdb95e1f8366363fe15149b01fa29897e88bd433660e0752b73
   languageName: node
   linkType: hard
 
@@ -235,6 +276,13 @@ __metadata:
     "@types/prop-types": "*"
     csstype: ^3.0.2
   checksum: dcef2034b822a949c5528fa8fa3c64da654fdbb822bd8f0488c0084d84cadb8b90af68813a6c95153d4754079f50b1cab206552c7c20f6b67a26c3641383fe31
+  languageName: node
+  linkType: hard
+
+"@types/twemoji@npm:^12.1.1":
+  version: 12.1.1
+  resolution: "@types/twemoji@npm:12.1.1"
+  checksum: 15f3c2147dbcffa8be0a34e5085bb282be2031f1d8aeccaf01673af6a5d0d0a897bc09383a881305db7778e11e3aa40b6607ba2208e17b1b7d66dc2e65e885e3
   languageName: node
   linkType: hard
 
@@ -3162,8 +3210,11 @@ fsevents@~2.3.1:
   version: 0.0.0-use.local
   resolution: "liko-12-website@workspace:."
   dependencies:
+    "@types/markdown-it": ^12.0.1
+    "@types/markdown-it-emoji": ^2.0.0
     "@types/node": ^14.14.22
     "@types/react": ^17.0.0
+    "@types/twemoji": ^12.1.1
     gray-matter: ^4.0.2
     highlight.js: ^10.5.0
     markdown-it: ^12.0.4
