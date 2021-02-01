@@ -1,4 +1,4 @@
-import React, { useState, useCallback } from 'react';
+import React, { useState } from 'react';
 import { useRouter } from 'next/router';
 import Link from 'next/link';
 
@@ -25,7 +25,7 @@ const NavbarLink: React.FC<NavbarLinkProps> = ({ configEntry: [name, path] }) =>
 
 const NavBar: React.FC = () => {
     const [active, setActive] = useState(false);
-    const toggleActive = useCallback(() => setActive(!active), [active]);
+    const toggleActive = () => setActive(!active);
 
     return (
         <nav className={styles.navbar + (active ? (" " + styles.active) : "")}>
