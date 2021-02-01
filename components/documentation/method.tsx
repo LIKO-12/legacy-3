@@ -4,7 +4,6 @@ import * as D from '../../lib/liko-api';
 import Code from './code';
 import Notes from './notes';
 import Arguments from './arguments';
-import { METHODS } from 'http';
 
 const md = new MarkdownIt();
 
@@ -30,9 +29,9 @@ const Method: React.FC<MethodProps> = ({ parent, name, method }) => {
         <h3>{parent !== undefined ? parent + '.' : null}{name}</h3>
         <p>{method.shortDescription}</p>
 
-        {method.longDescription ? <p>{method.longDescription}</p> : null}
 
         <ul><li><b>Available since LIKO-12:</b>{' '}V{method.availableSince[1].join('.')}</li></ul>
+        {method.longDescription ? <p dangerouslySetInnerHTML={{__html: md.render(method.longDescription)}}/> : null}
 
         {method.notes ? <Notes notes={method.notes} /> : null}
 
