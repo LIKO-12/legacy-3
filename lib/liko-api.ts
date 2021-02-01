@@ -343,6 +343,24 @@ interface Documentation {
     Peripherals: { [peripheralShortName: string]: Peripheral }
 }
 
+export function isSingleType(type: LuaType): type is SimpleLuaType {
+    return !Array.isArray(type);
+}
+
+export function isMultipleTypes(type: LuaType): type is ComplexLuaType[] {
+    return Array.isArray(type);
+}
+
+export function isSimpleType(type: ComplexLuaType): type is SimpleLuaType {
+    return !Array.isArray(type);
+}
+
+export function isCustomType(type: ComplexLuaType): type is CustomLuaType {
+    return Array.isArray(type);
+}
+
+export function isSingleUsageMethod(method: LuaMethod): method is SingleUsageMethod {
+    return (method as MultiUsageMethod).usages === undefined;
 }
 
 export default jsonData as unknown as Documentation;
