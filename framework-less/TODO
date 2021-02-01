@@ -1,9 +1,0 @@
-✔ It's possible to match the line height with the emoji height using `.emoji { height: 1.2em; }`. @done(21-01-04 22:14)
-✔ Style the `<kbd>` elements properly. @done(21-01-04 23:23)
-☐ Create a 404 page.
-✔ Set the document's title. @done(21-01-09 15:47)
-✔ Set the document's meta description. @done(21-01-09 15:47)
-✔ Set the document's meta SEO tags. @done(21-01-09 15:47)
-✔ Implement the navigation bar linking. @done(21-01-09 20:08)
-☐ Create the side panel.
-☐ Add support for HTML and JS documents.
