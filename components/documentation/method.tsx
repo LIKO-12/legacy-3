@@ -29,8 +29,6 @@ const Method: React.FC<MethodProps> = ({ parent, name, method }) => {
         <h3>{parent !== undefined ? parent + '.' : null}{name}</h3>
         <p>{method.shortDescription}</p>
 
-
-        <ul><li><b>Available since LIKO-12:</b>{' '}V{method.availableSince[1].join('.')}</li></ul>
         {method.longDescription ? <p dangerouslySetInnerHTML={{__html: md.render(method.longDescription)}}/> : null}
 
         {method.notes ? <Notes notes={method.notes} /> : null}
