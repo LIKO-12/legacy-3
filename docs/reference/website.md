@@ -9,6 +9,6 @@ and still not quite ready for contribution. So please wait until I state it's re
 
 ## Links
 
-- [Markdown Cheatsheet](markdown-cheatsheet.md)
-- [Markdown Features](markdown-features.md)
-- [Markdown Test Document](markdown_test.md)
+- [Markdown Cheatsheet](website/markdown-cheatsheet.md)
+- [Markdown Features](website/markdown-features.md)
+- [Markdown Test Document](website/markdown_test.md)

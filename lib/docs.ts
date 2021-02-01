@@ -57,7 +57,7 @@ md.renderer.rules.emoji = (token, idx, _, env) => {
 /**
  * A prased document data.
  */
-interface DocumentData {
+export interface DocumentData {
     /**
      * The id of the document.
      */
@@ -80,9 +80,8 @@ interface DocumentData {
  * @returns The document's data. {} if the document doesn't exist.
  */
 export async function getDocumentData(id: string): Promise<DocumentData> {
-    const dirPath = path.join(documentsDirectory, id);
-    const fullPath = fs.existsSync(dirPath) ? `${dirPath}/index.md` : `${dirPath}.md`;
-
+    if (id === '') id = 'index';
+    const fullPath = path.join(documentsDirectory, `${id}.md`);
     const fileContents = fs.readFileSync(fullPath, "utf-8");
 
     // Use gray-matter to parse the document's metadata section.
@@ -106,17 +105,14 @@ export async function getDocumentData(id: string): Promise<DocumentData> {
  * @param array An array to add the indexed paths to.
  * @returns An array containing the index paths. It's the same array passed in the parameters.
  */
-function indexDirectoryForMdFiles(dirPath: string, prefix: string = "/docs/", array: string[] = []): string[] {
+function indexDirectoryForMdFiles(dirPath: string, prefix: string = "/docs/", array: string[] = ['/docs/']): string[] {
     const fileNames = fs.readdirSync(dirPath, "utf-8");
     for (let fileName of fileNames) {
         const filePath = path.join(dirPath, fileName);
         if (fs.statSync(filePath).isDirectory()) {
             indexDirectoryForMdFiles(filePath, prefix + fileName + "/", array);
         } else {
-            if (fileName.endsWith(".md")) {
-                if (fileName == "index.md") array.push(prefix);
-                else array.push(prefix + fileName.substr(0, fileName.length - 3));
-            }
+            if (fileName.endsWith(".md")) array.push(prefix + fileName.substr(0, fileName.length - 3));
         }
     }
     return array;
